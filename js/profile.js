@@ -105,7 +105,7 @@ function initializeEventListeners() {
     // Back button functionality
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', function() {
-        window.location.href = 'home.html';
+        window.location.href = '../home.html';
     });
 
     // Logout button functionality
@@ -115,7 +115,7 @@ function initializeEventListeners() {
             console.log('Logging out...');
             alert('กำลังออกจากระบบ...');
             // Redirect to sign in page
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
     });
 

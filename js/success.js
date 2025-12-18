@@ -17,7 +17,7 @@ const backHomeBtn = document.getElementById('backHomeBtn');
 
 backHomeBtn.addEventListener('click', function() {
     console.log('Back to home clicked');
-    window.location.href = 'home.html';
+    window.location.href = '../home.html';
 });
 
 // Add ripple effect to buttons
@@ -72,5 +72,5 @@ console.log('%cสั่งซื้อสำเร็จ! ขอบคุณท
 
 // Auto redirect to home after 10 seconds (optional)
 // setTimeout(() => {
-//     window.location.href = 'home.html';
+//     window.location.href = '../home.html';
 // }, 10000);

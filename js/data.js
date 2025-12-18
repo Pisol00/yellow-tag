@@ -14,7 +14,8 @@ const productsData = [
         delivery: 'จัดส่งฟรี',
         deliveryTime: '2-3 วัน',
         description: 'โต๊ะสำเร็จรูปคุณภาพดี ทนทาน ใช้งานได้จริง',
-        stock: 50
+        stock: 50,
+        category: 'recommended'
     },
     {
         id: 2,
@@ -28,7 +29,8 @@ const productsData = [
         delivery: 'จัดส่งฟรี',
         deliveryTime: '1-2 วัน',
         description: 'ทาร์ตไข่อบสดใหม่ทุกวัน หอม อร่อย',
-        stock: 100
+        stock: 100,
+        category: 'recommended'
     },
     {
         id: 3,
@@ -42,21 +44,128 @@ const productsData = [
         delivery: 'จัดส่งฟรี',
         deliveryTime: '1 วัน',
         description: 'ข้าวมันไก่สูตรต้นตำรับ รสชาติเข้มข้น',
-        stock: 30
+        stock: 30,
+        category: 'food'
     },
     {
         id: 4,
-        name: 'เสื้อและกระโปรงลายสก๊อต',
-        price: 450,
-        discountPrice: 350,
-        discount: 22,
-        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Dress',
+        name: 'เสื้อผ้ามือสอง',
+        price: 200,
+        discountPrice: 140,
+        discount: 30,
+        image: 'https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Clothes',
         shop: 'Fashion Store',
         shopRating: 4.6,
         delivery: 'จัดส่งฟรี',
         deliveryTime: '3-5 วัน',
+        description: 'เสื้อผ้ามือสอง คุณภาพดี สภาพใหม่',
+        stock: 20,
+        category: 'recommended'
+    },
+    {
+        id: 5,
+        name: 'ข้าวซอย',
+        price: 70,
+        discountPrice: 56,
+        discount: 20,
+        image: 'https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Khao+Soi',
+        shop: 'Northern Food',
+        shopRating: 4.8,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '1 วัน',
+        description: 'ข้าวซอยสูตรเชียงใหม่ แกงเข้มข้น',
+        stock: 25,
+        category: 'food'
+    },
+    {
+        id: 6,
+        name: 'ก้วยเตี๋ยว',
+        price: 50,
+        discountPrice: 45,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Noodles',
+        shop: 'Noodle House',
+        shopRating: 4.5,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '1 วัน',
+        description: 'ก้วยเตี๋ยวน้ำใส เนื้อนุ่ม น้ำซุปหอม',
+        stock: 40,
+        category: 'food'
+    },
+    {
+        id: 7,
+        name: 'ข้าวผัด',
+        price: 60,
+        discountPrice: 54,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Fried+Rice',
+        shop: 'Thai Restaurant',
+        shopRating: 4.6,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '1 วัน',
+        description: 'ข้าวผัดไข่ รสชาติเข้มข้น',
+        stock: 35,
+        category: 'food'
+    },
+    {
+        id: 8,
+        name: 'เสื้อลายสก๊อต',
+        price: 450,
+        discountPrice: 405,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Dress',
+        shop: 'Fashion Store',
+        shopRating: 4.7,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '3-5 วัน',
         description: 'ชุดเสื้อและกระโปรงลายสก๊อต สไตล์เกาหลี',
-        stock: 20
+        stock: 15,
+        category: 'clothing'
+    },
+    {
+        id: 9,
+        name: 'เสื้อเชิตสีน้ำตาล',
+        price: 350,
+        discountPrice: 315,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Shirt',
+        shop: 'Casual Wear',
+        shopRating: 4.5,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '3-5 วัน',
+        description: 'เสื้อเชิตสีน้ำตาล ผ้าคอตตอน สวมใส่สบาย',
+        stock: 25,
+        category: 'clothing'
+    },
+    {
+        id: 10,
+        name: 'เสื้อสวยน่ารักมีนบอล',
+        price: 280,
+        discountPrice: 252,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Cute+Top',
+        shop: 'Cute Fashion',
+        shopRating: 4.8,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '3-5 วัน',
+        description: 'เสื้อสวยน่ารักตกแต่งด้วยมินิบอล',
+        stock: 18,
+        category: 'clothing'
+    },
+    {
+        id: 11,
+        name: 'เสื้อฟินลายสก๊อต',
+        price: 320,
+        discountPrice: 288,
+        discount: 10,
+        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Flannel',
+        shop: 'Vintage Shop',
+        shopRating: 4.6,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '3-5 วัน',
+        description: 'เสื้อฟินลายสก๊อต สไตล์วินเทจ',
+        stock: 20,
+        category: 'clothing'
     }
 ];
 

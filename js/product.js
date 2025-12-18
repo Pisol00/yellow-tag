@@ -68,7 +68,7 @@ function initializeEventListeners() {
     // Back button functionality
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', function() {
-        window.location.href = 'home.html';
+        window.location.href = '../home.html';
     });
 
     // Chat button functionality
