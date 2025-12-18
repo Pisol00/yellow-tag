@@ -64,43 +64,41 @@ userBtn.addEventListener('click', function() {
     // window.location.href = 'profile.html';
 });
 
-// Banner slider functionality
-let currentSlide = 0;
-const dots = document.querySelectorAll('.dot');
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', function() {
-        currentSlide = index;
-        updateSlider();
-    });
+// Initialize Swiper for Banner
+const bannerSwiper = new Swiper('.bannerSwiper', {
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    speed: 600,
+    effect: 'slide',
 });
 
-function updateSlider() {
-    dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
+// Initialize Swiper for Products
+const productsSwiper = document.querySelectorAll('.productsSwiper');
+productsSwiper.forEach((swiper) => {
+    new Swiper(swiper, {
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+        freeMode: true,
+        grabCursor: true,
     });
-}
-
-// Auto-advance slider every 5 seconds
-setInterval(function() {
-    currentSlide = (currentSlide + 1) % dots.length;
-    updateSlider();
-}, 5000);
+});
 
 // Product card click functionality
 const productCards = document.querySelectorAll('.product-card');
 
-productCards.forEach((card, index) => {
+productCards.forEach((card) => {
     card.addEventListener('click', function() {
         const productName = this.querySelector('.product-name').textContent;
         console.log('Product clicked:', productName);
-        alert(`คุณคลิกที่: ${productName}`);
         // Navigate to product detail page
-        // window.location.href = `product.html?id=${index}`;
+        window.location.href = 'product.html';
     });
 });
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Tag Sale - รายละเอียดสินค้า</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <button class="back-btn" id="backBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="page-title">หน้าหลัก</h1>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Product Image -->
+            <div class="product-image-container">
+                <div class="discount-badge">-40%</div>
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Table" alt="โต๊ะสำเร็จรูป" id="productImage">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h2 class="product-name" id="productName">โต๊ะสำเร็จรูป</h2>
+
+                <div class="price-section">
+                    <div class="price-row">
+                        <span class="current-price">฿100</span>
+                        <span class="original-price">฿167</span>
+                    </div>
+                </div>
+
+                <!-- Shop Info -->
+                <div class="shop-info">
+                    <div class="shop-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                            <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V22H4V20Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="shop-name">ชื่อร้านค้า</span>
+                </div>
+
+                <!-- Delivery Info -->
+                <div class="delivery-info">
+                    <svg class="delivery-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 3H16V13H1V3Z" fill="currentColor"/>
+                        <path d="M16 6H19L23 10V13H16V6Z" fill="currentColor"/>
+                        <circle cx="5" cy="18" r="2" fill="currentColor"/>
+                        <circle cx="19" cy="18" r="2" fill="currentColor"/>
+                    </svg>
+                    <div class="delivery-text">
+                        <p class="delivery-date">จะจัดส่งภายใน xx xx - xx xx</p>
+                        <p class="delivery-location">ราคาจัดส่ง xx</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Action Bar -->
+        <div class="bottom-bar">
+            <button class="chat-btn" id="chatBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+                    <path d="M4 4H20V16H8L4 20V4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <span>Chat</span>
+            </button>
+
+            <button class="cart-btn" id="cartBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6L8 18H20L22 6H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <circle cx="9" cy="21" r="1" fill="currentColor"/>
+                    <circle cx="19" cy="21" r="1" fill="currentColor"/>
+                </svg>
+                <span>Cart</span>
+            </button>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+</body>
+</html>
