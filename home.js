@@ -59,9 +59,8 @@ const userBtn = document.getElementById('userBtn');
 
 userBtn.addEventListener('click', function() {
     console.log('User profile clicked');
-    alert('เปิดหน้าโปรไฟล์ผู้ใช้');
     // Navigate to user profile page
-    // window.location.href = 'profile.html';
+    window.location.href = 'profile.html';
 });
 
 // Initialize Swiper for Banner

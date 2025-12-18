@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Tag Sale - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <button class="back-btn" id="backBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="page-title">Checkout</h1>
+            <div class="empty-space"></div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="checkoutContent">
+            <!-- Content will be dynamically generated from data.js -->
+        </main>
+
+        <!-- Bottom Action Bar -->
+        <div class="bottom-bar">
+            <div class="total-price">
+                <span class="total-label">ยอดรวม</span>
+                <span class="total-amount">฿83</span>
+            </div>
+            <button class="confirm-btn" id="confirmBtn">
+                ยืนยันคำสั่งซื้อ
+            </button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

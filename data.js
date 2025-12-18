@@ -1,0 +1,273 @@
+// Yellow Tag Sale - Central Data Store
+
+// Products Data
+const productsData = [
+    {
+        id: 1,
+        name: 'โต๊ะสำเร็จรูป',
+        price: 100,
+        discountPrice: 60,
+        discount: 40,
+        image: 'https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Table',
+        shop: 'Yellow Shop',
+        shopRating: 4.8,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '2-3 วัน',
+        description: 'โต๊ะสำเร็จรูปคุณภาพดี ทนทาน ใช้งานได้จริง',
+        stock: 50
+    },
+    {
+        id: 2,
+        name: 'ทาร์ตไข่',
+        price: 80,
+        discountPrice: 60,
+        discount: 25,
+        image: 'https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Egg+Tart',
+        shop: 'Bakery Shop',
+        shopRating: 4.9,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '1-2 วัน',
+        description: 'ทาร์ตไข่อบสดใหม่ทุกวัน หอม อร่อย',
+        stock: 100
+    },
+    {
+        id: 3,
+        name: 'ข้าวมันไก่',
+        price: 60,
+        discountPrice: 45,
+        discount: 25,
+        image: 'https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Chicken+Rice',
+        shop: 'Thai Food',
+        shopRating: 4.7,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '1 วัน',
+        description: 'ข้าวมันไก่สูตรต้นตำรับ รสชาติเข้มข้น',
+        stock: 30
+    },
+    {
+        id: 4,
+        name: 'เสื้อและกระโปรงลายสก๊อต',
+        price: 450,
+        discountPrice: 350,
+        discount: 22,
+        image: 'https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Dress',
+        shop: 'Fashion Store',
+        shopRating: 4.6,
+        delivery: 'จัดส่งฟรี',
+        deliveryTime: '3-5 วัน',
+        description: 'ชุดเสื้อและกระโปรงลายสก๊อต สไตล์เกาหลี',
+        stock: 20
+    }
+];
+
+// Cart Data (Initial cart items)
+const cartData = [
+    {
+        id: 1,
+        productId: 1,
+        quantity: 1,
+        selected: true
+    },
+    {
+        id: 2,
+        productId: 2,
+        quantity: 2,
+        selected: true
+    },
+    {
+        id: 3,
+        productId: 3,
+        quantity: 1,
+        selected: true
+    }
+];
+
+// Orders Data
+const ordersData = [
+    {
+        id: 'YTS-2024-001',
+        date: '18 ธันวาคม 2567',
+        status: 'completed',
+        statusText: 'สำเร็จ',
+        items: [
+            {
+                productId: 1,
+                quantity: 1
+            }
+        ],
+        subtotal: 60,
+        shipping: 20,
+        discount: 0,
+        total: 83
+    },
+    {
+        id: 'YTS-2024-002',
+        date: '17 ธันวาคม 2567',
+        status: 'shipped',
+        statusText: 'กำลังจัดส่ง',
+        items: [
+            {
+                productId: 2,
+                quantity: 2
+            }
+        ],
+        subtotal: 120,
+        shipping: 30,
+        discount: 0,
+        total: 150
+    },
+    {
+        id: 'YTS-2024-003',
+        date: '16 ธันวาคม 2567',
+        status: 'processing',
+        statusText: 'กำลังเตรียมสินค้า',
+        items: [
+            {
+                productId: 3,
+                quantity: 1
+            }
+        ],
+        subtotal: 45,
+        shipping: 20,
+        discount: 0,
+        total: 65
+    },
+    {
+        id: 'YTS-2024-004',
+        date: '15 ธันวาคม 2567',
+        status: 'completed',
+        statusText: 'สำเร็จ',
+        items: [
+            {
+                productId: 4,
+                quantity: 1
+            }
+        ],
+        subtotal: 350,
+        shipping: 30,
+        discount: 0,
+        total: 380
+    }
+];
+
+// User Profile Data
+const userProfile = {
+    name: 'สมชาย ใจดี',
+    email: 'somchai@example.com',
+    phone: '098-765-4321',
+    address: '123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110',
+    avatar: 'https://via.placeholder.com/120x120/4E5DB7/F8E291?text=SC'
+};
+
+// Delivery Address Data (for checkout)
+const deliveryAddress = {
+    name: 'สมชาย ใจดี',
+    phone: '098-765-4321',
+    address: '123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110'
+};
+
+// Payment Methods Data
+const paymentMethods = [
+    {
+        id: 'credit',
+        name: 'บัตรเครดิต/เดบิต',
+        icon: 'credit-card'
+    },
+    {
+        id: 'bank',
+        name: 'โอนผ่านธนาคาร',
+        icon: 'bank'
+    },
+    {
+        id: 'cod',
+        name: 'เก็บเงินปลายทาง',
+        icon: 'cash'
+    }
+];
+
+// Banner Data (for home page)
+const bannersData = [
+    {
+        id: 1,
+        image: 'https://via.placeholder.com/400x200/4E5DB7/F8E291?text=Sale+40%25',
+        title: 'Sale 40%'
+    },
+    {
+        id: 2,
+        image: 'https://via.placeholder.com/400x200/E8B849/4E5DB7?text=New+Arrival',
+        title: 'New Arrival'
+    },
+    {
+        id: 3,
+        image: 'https://via.placeholder.com/400x200/F4D483/4E5DB7?text=Free+Shipping',
+        title: 'Free Shipping'
+    }
+];
+
+// Helper Functions
+const dataHelpers = {
+    // Get product by ID
+    getProductById: function(productId) {
+        return productsData.find(p => p.id === productId);
+    },
+
+    // Get order by ID
+    getOrderById: function(orderId) {
+        return ordersData.find(o => o.id === orderId);
+    },
+
+    // Get cart items with product details
+    getCartItemsWithDetails: function() {
+        return cartData.map(cartItem => {
+            const product = this.getProductById(cartItem.productId);
+            return {
+                ...cartItem,
+                product: product
+            };
+        });
+    },
+
+    // Get order with product details
+    getOrderWithDetails: function(orderId) {
+        const order = this.getOrderById(orderId);
+        if (!order) return null;
+
+        return {
+            ...order,
+            items: order.items.map(item => {
+                const product = this.getProductById(item.productId);
+                return {
+                    ...item,
+                    product: product
+                };
+            })
+        };
+    },
+
+    // Calculate cart total
+    calculateCartTotal: function(selectedOnly = true) {
+        let total = 0;
+        const items = selectedOnly
+            ? cartData.filter(item => item.selected)
+            : cartData;
+
+        items.forEach(cartItem => {
+            const product = this.getProductById(cartItem.productId);
+            if (product) {
+                total += product.discountPrice * cartItem.quantity;
+            }
+        });
+
+        return total;
+    },
+
+    // Get selected cart items count
+    getSelectedCartCount: function() {
+        return cartData.filter(item => item.selected).length;
+    },
+
+    // Get total cart items count
+    getTotalCartCount: function() {
+        return cartData.length;
+    }
+};
