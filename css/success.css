@@ -355,6 +355,176 @@ body {
     }
 }
 
+/* Desktop Responsive Design - Web App Layout */
+@media (min-width: 768px) {
+    body {
+        background-color: #F8E291;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .main-content {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 40px 35px;
+        gap: 22px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .success-icon {
+        margin-bottom: 10px;
+    }
+
+    .success-icon svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .success-title {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .success-subtitle {
+        font-size: 15px;
+    }
+
+    .order-details {
+        padding: 20px;
+        border-radius: 16px;
+        background-color: #F8F8F8;
+    }
+
+    .detail-row {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .order-status {
+        padding: 18px;
+        border-radius: 16px;
+        background-color: #F8F8F8;
+    }
+
+    .status-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .status-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .status-label {
+        font-size: 12px;
+    }
+
+    .status-line {
+        width: 40px;
+        height: 2px;
+    }
+
+    .info-message {
+        padding: 12px;
+        background-color: rgba(78, 93, 183, 0.08);
+    }
+
+    .info-message p {
+        font-size: 13px;
+    }
+
+    .action-buttons {
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 50px 20px;
+    }
+
+    .main-content {
+        padding: 50px 45px;
+        max-width: 550px;
+    }
+
+    .success-icon svg {
+        width: 110px;
+        height: 110px;
+    }
+
+    .success-title {
+        font-size: 32px;
+    }
+
+    .success-subtitle {
+        font-size: 16px;
+    }
+
+    .order-details,
+    .order-status {
+        padding: 22px;
+    }
+
+    .detail-row {
+        font-size: 15px;
+    }
+
+    .info-message {
+        padding: 13px;
+    }
+
+    .info-message p {
+        font-size: 14px;
+    }
+
+    .status-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .status-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .status-label {
+        font-size: 13px;
+    }
+
+    .status-line {
+        width: 45px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;

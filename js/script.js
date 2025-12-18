@@ -10,7 +10,7 @@ const headerSubtitle = document.getElementById('headerSubtitle');
 showSignUpBtn.addEventListener('click', function(e) {
     e.preventDefault();
     signInSection.style.display = 'none';
-    signUpSection.style.display = 'block';
+    signUpSection.style.display = 'flex';
     headerTitle.textContent = 'สร้างบัญชีใหม่';
     headerSubtitle.textContent = 'เข้าร่วม Yellow Tag Sale และรับส่วนลดสุดพิเศษ';
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ showSignUpBtn.addEventListener('click', function(e) {
 showSignInBtn.addEventListener('click', function(e) {
     e.preventDefault();
     signUpSection.style.display = 'none';
-    signInSection.style.display = 'block';
+    signInSection.style.display = 'flex';
     headerTitle.textContent = 'ยินดีต้อนรับ';
     headerSubtitle.textContent = 'กรุณาเข้าสู่ระบบ';
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -196,15 +196,37 @@ function initializeBannerSwiper() {
     });
 }
 
-// Initialize Swiper for Products
+// Initialize Swiper for Products with responsive settings
 function initializeProductsSwiper() {
     const productsSwiper = document.querySelectorAll('.productsSwiper');
     productsSwiper.forEach((swiper) => {
         new Swiper(swiper, {
-            slidesPerView: 'auto',
+            slidesPerView: 2.2,
             spaceBetween: 15,
             freeMode: true,
             grabCursor: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 18,
+                    freeMode: true
+                },
+                1024: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 20,
+                    freeMode: true
+                },
+                1280: {
+                    slidesPerView: 5.5,
+                    spaceBetween: 22,
+                    freeMode: true
+                },
+                1600: {
+                    slidesPerView: 6.5,
+                    spaceBetween: 25,
+                    freeMode: true
+                }
+            }
         });
     });
 }
@@ -354,12 +376,41 @@ function initializeRippleEffect() {
     });
 }
 
+// Detect if device is desktop or mobile
+function isDesktop() {
+    return window.innerWidth >= 768;
+}
+
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     loadBanners();
     loadProducts();
     initializeBannerSwiper();
     initializeRippleEffect();
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Reload products if switching between mobile and desktop
+            const wasDesktop = document.body.classList.contains('is-desktop');
+            const nowDesktop = isDesktop();
+            
+            if (wasDesktop !== nowDesktop) {
+                if (nowDesktop) {
+                    document.body.classList.add('is-desktop');
+                } else {
+                    document.body.classList.remove('is-desktop');
+                }
+            }
+        }, 250);
+    });
+    
+    // Set initial desktop class
+    if (isDesktop()) {
+        document.body.classList.add('is-desktop');
+    }
 });
 
 // Handle back button

@@ -676,6 +676,324 @@ body {
     }
 }
 
+/* Desktop Responsive Design - Web App Layout */
+@media (min-width: 768px) {
+    body {
+        background-color: #F8E291;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .container {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    /* Top Navigation for Desktop */
+    .top-nav {
+        padding: 16px 40px;
+        gap: 14px;
+        border-radius: 0;
+    }
+
+    .menu-btn span {
+        width: 24px;
+    }
+
+    .logo-image {
+        width: 55px;
+        height: 55px;
+    }
+
+    .user-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .user-btn svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .search-bar {
+        padding: 9px 16px;
+        border-radius: 22px;
+    }
+
+    .search-bar input {
+        font-size: 15px;
+    }
+
+    .search-btn svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    /* Main Content for Desktop */
+    .main-content {
+        padding: 25px 40px;
+    }
+
+    /* Banner Section for Desktop */
+    .banner-section {
+        margin-bottom: 30px;
+    }
+
+    .bannerSwiper {
+        border-radius: 20px;
+    }
+
+    .bannerSwiper .swiper-slide {
+        padding: 45px 35px;
+        min-height: 280px;
+    }
+
+    .banner-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .banner-text h2 {
+        font-size: 48px;
+    }
+
+    .banner-text p {
+        font-size: 42px;
+    }
+
+    /* Products Section for Desktop */
+    .products-section {
+        margin-bottom: 35px;
+    }
+
+    .section-header h3 {
+        font-size: 22px;
+    }
+
+    .view-all-btn {
+        padding: 9px 18px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    /* Products Swiper for Desktop */
+    .productsSwiper {
+        overflow: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .productsSwiper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .productsSwiper .swiper-slide {
+        width: 200px;
+        flex-shrink: 0;
+    }
+
+    .product-card {
+        border-radius: 16px;
+        width: 100%;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-name {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .discount-badge {
+        top: 12px;
+        right: 12px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Side Menu for Desktop */
+    .menu-content {
+        width: 320px;
+    }
+
+    .menu-header {
+        padding: 22px;
+    }
+
+    .menu-header h3 {
+        font-size: 24px;
+    }
+
+    .menu-list {
+        padding: 20px 0;
+    }
+
+    .menu-list a {
+        padding: 16px 25px;
+        font-size: 16px;
+    }
+
+    .menu-list a:hover {
+        padding-left: 30px;
+    }
+
+    .menu-footer {
+        padding: 22px;
+    }
+
+    .logout-btn {
+        padding: 13px;
+        font-size: 16px;
+        border-radius: 11px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .top-nav {
+        padding: 18px 50px;
+    }
+
+    .logo-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .main-content {
+        padding: 30px 50px;
+    }
+
+    .bannerSwiper .swiper-slide {
+        padding: 55px 40px;
+        min-height: 320px;
+    }
+
+    .banner-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .banner-text h2 {
+        font-size: 54px;
+    }
+
+    .banner-text p {
+        font-size: 48px;
+    }
+
+    .section-header h3 {
+        font-size: 24px;
+    }
+
+    .productsSwiper .swiper-slide {
+        width: 220px;
+    }
+
+    .product-image {
+        height: 195px;
+    }
+
+    .product-name {
+        padding: 15px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .top-nav {
+        padding: 20px 60px;
+    }
+
+    .logo-image {
+        width: 65px;
+        height: 65px;
+    }
+
+    .main-content {
+        padding: 35px 60px;
+    }
+
+    .bannerSwiper .swiper-slide {
+        padding: 65px 45px;
+        min-height: 360px;
+    }
+
+    .banner-image {
+        width: 230px;
+        height: 230px;
+    }
+
+    .banner-text h2 {
+        font-size: 62px;
+    }
+
+    .banner-text p {
+        font-size: 56px;
+    }
+
+    .section-header h3 {
+        font-size: 26px;
+    }
+
+    .productsSwiper .swiper-slide {
+        width: 240px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+
+    .product-name {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .top-nav {
+        padding: 22px 70px;
+    }
+
+    .logo-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .main-content {
+        padding: 40px 70px;
+    }
+
+    .bannerSwiper .swiper-slide {
+        padding: 75px 50px;
+        min-height: 400px;
+    }
+
+    .banner-image {
+        width: 260px;
+        height: 260px;
+    }
+
+    .banner-text h2 {
+        font-size: 70px;
+    }
+
+    .banner-text p {
+        font-size: 64px;
+    }
+
+    .productsSwiper .swiper-slide {
+        width: 260px;
+    }
+
+    .product-image {
+        height: 225px;
+    }
+}
+
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;

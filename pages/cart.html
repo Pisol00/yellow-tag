@@ -10,50 +10,48 @@
     <link rel="stylesheet" href="../css/cart.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Navigation -->
-        <nav class="top-nav">
-            <button class="back-btn" id="backBtn">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <h1 class="page-title">ตะกร้าสินค้า</h1>
-            <div class="cart-count">3</div>
-        </nav>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <button class="back-btn" id="backBtn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <h1 class="page-title">ตะกร้าสินค้า</h1>
+        <div class="cart-count">3</div>
+    </nav>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Cart Items -->
-            <section class="cart-items" id="cartItemsContainer">
-                <!-- Cart items will be dynamically generated from data.js -->
-            </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Cart Items -->
+        <section class="cart-items" id="cartItemsContainer">
+            <!-- Cart items will be dynamically generated from data.js -->
+        </section>
 
-            <!-- Empty State (hidden by default) -->
-            <div class="empty-state" style="display: none;">
-                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 6L8 18H20L22 6H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    <circle cx="9" cy="21" r="1" fill="currentColor"/>
-                    <circle cx="19" cy="21" r="1" fill="currentColor"/>
-                </svg>
-                <p class="empty-text">ตะกร้าสินค้าว่างเปล่า</p>
-                <button class="continue-shopping-btn" onclick="window.location.href='home.html'">เลือกซื้อสินค้า</button>
-            </div>
-        </main>
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state" style="display: none;">
+            <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6L8 18H20L22 6H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="9" cy="21" r="1" fill="currentColor"/>
+                <circle cx="19" cy="21" r="1" fill="currentColor"/>
+            </svg>
+            <p class="empty-text">ตะกร้าสินค้าว่างเปล่า</p>
+            <button class="continue-shopping-btn" onclick="window.location.href='home.html'">เลือกซื้อสินค้า</button>
+        </div>
+    </main>
 
-        <!-- Bottom Bar -->
-        <div class="bottom-bar">
-            <div class="select-all">
-                <input type="checkbox" id="selectAll" checked>
-                <label for="selectAll">เลือกทั้งหมด</label>
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <div class="select-all">
+            <input type="checkbox" id="selectAll" checked>
+            <label for="selectAll">เลือกทั้งหมด</label>
+        </div>
+        <div class="total-section">
+            <div class="total-info">
+                <span class="total-label">รวมทั้งหมด</span>
+                <span class="total-amount">฿165</span>
             </div>
-            <div class="total-section">
-                <div class="total-info">
-                    <span class="total-label">รวมทั้งหมด</span>
-                    <span class="total-amount">฿165</span>
-                </div>
-                <button class="checkout-btn" id="checkoutBtn">สั่งซื้อ (3)</button>
-            </div>
+            <button class="checkout-btn" id="checkoutBtn">สั่งซื้อ (3)</button>
         </div>
     </div>
 

@@ -11,71 +11,69 @@
     <link rel="stylesheet" href="../css/orders.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Navigation -->
-        <nav class="top-nav">
-            <button class="back-btn" id="backBtn">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <button class="back-btn" id="backBtn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <h1 class="page-title">ประวัติการสั่งซื้อ</h1>
+        <div class="empty-space"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Filter Tabs -->
+        <div class="swiper filterTabsSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <button class="filter-tab active" data-status="all">ทั้งหมด</button>
+                </div>
+                <div class="swiper-slide">
+                    <button class="filter-tab" data-status="processing">กำลังดำเนินการ</button>
+                </div>
+                <div class="swiper-slide">
+                    <button class="filter-tab" data-status="shipped">กำลังจัดส่ง</button>
+                </div>
+                <div class="swiper-slide">
+                    <button class="filter-tab" data-status="completed">สำเร็จ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-list" id="ordersListContainer">
+            <!-- Orders will be dynamically generated from data.js -->
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state" style="display: none;">
+            <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6L8 18H20L22 6H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="9" cy="21" r="1" fill="currentColor"/>
+                <circle cx="19" cy="21" r="1" fill="currentColor"/>
+            </svg>
+            <p class="empty-text">ยังไม่มีประวัติการสั่งซื้อ</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="paginationContainer" style="display: none;">
+            <button class="pagination-btn prev-btn" id="prevPageBtn">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <h1 class="page-title">ประวัติการสั่งซื้อ</h1>
-            <div class="empty-space"></div>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Filter Tabs -->
-            <div class="swiper filterTabsSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <button class="filter-tab active" data-status="all">ทั้งหมด</button>
-                    </div>
-                    <div class="swiper-slide">
-                        <button class="filter-tab" data-status="processing">กำลังดำเนินการ</button>
-                    </div>
-                    <div class="swiper-slide">
-                        <button class="filter-tab" data-status="shipped">กำลังจัดส่ง</button>
-                    </div>
-                    <div class="swiper-slide">
-                        <button class="filter-tab" data-status="completed">สำเร็จ</button>
-                    </div>
-                </div>
+            <div class="pagination-dots" id="paginationDots">
+                <!-- Dots will be dynamically generated -->
             </div>
-
-            <!-- Orders List -->
-            <div class="orders-list" id="ordersListContainer">
-                <!-- Orders will be dynamically generated from data.js -->
-            </div>
-
-            <!-- Empty State (hidden by default) -->
-            <div class="empty-state" style="display: none;">
-                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 6L8 18H20L22 6H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    <circle cx="9" cy="21" r="1" fill="currentColor"/>
-                    <circle cx="19" cy="21" r="1" fill="currentColor"/>
+            <button class="pagination-btn next-btn" id="nextPageBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <p class="empty-text">ยังไม่มีประวัติการสั่งซื้อ</p>
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination" id="paginationContainer" style="display: none;">
-                <button class="pagination-btn prev-btn" id="prevPageBtn">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="pagination-dots" id="paginationDots">
-                    <!-- Dots will be dynamically generated -->
-                </div>
-                <button class="pagination-btn next-btn" id="nextPageBtn">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-        </main>
-    </div>
+            </button>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/data.js"></script>

@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #F8E291;
+    background-color: #4E5DB7;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: flex-start;
     padding: 0;
     margin: 0;
@@ -20,12 +20,10 @@ body {
 .container {
     width: 100%;
     max-width: 428px;
-    min-height: 100vh;
     background-color: #F8E291;
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-bottom: 120px;
 }
 
 /* Top Navigation */
@@ -35,10 +33,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 428px;
+    align-self: center;
 }
 
 .back-btn {
@@ -85,9 +86,14 @@ body {
 .main-content {
     flex: 1;
     padding: 20px;
+    padding-bottom: 140px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 428px;
+    align-self: center;
+    background-color: #F8E291;
 }
 
 /* Cart Items */
@@ -306,12 +312,11 @@ body {
 
 /* Bottom Bar */
 .bottom-bar {
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
     max-width: 428px;
+    align-self: center;
     background-color: white;
     padding: 15px 20px;
     box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
@@ -444,6 +449,157 @@ body {
 
     .container {
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Desktop Responsive Design */
+@media (min-width: 768px) {
+    body {
+        background-color: #F8E291;
+        padding: 0;
+        align-items: center;
+    }
+
+    .top-nav {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 40px;
+        position: sticky;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .cart-count {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .main-content {
+        max-width: 800px;
+        padding: 20px 30px 30px;
+        gap: 16px;
+    }
+
+    .cart-item {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .item-image {
+        width: 85px;
+        height: 85px;
+    }
+
+    .item-details {
+        gap: 8px;
+    }
+
+    .item-name {
+        font-size: 16px;
+    }
+
+    .price-discount {
+        font-size: 17px;
+    }
+
+    .qty-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .qty-input {
+        width: 45px;
+        font-size: 16px;
+    }
+
+    .bottom-bar {
+        width: 100%;
+        max-width: 800px;
+        padding: 16px 30px;
+    }
+
+    .total-label {
+        font-size: 14px;
+    }
+
+    .total-amount {
+        font-size: 22px;
+    }
+
+    .checkout-btn {
+        padding: 13px 28px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 0;
+    }
+
+    .top-nav {
+        padding: 18px 50px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .cart-count {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .main-content {
+        max-width: 900px;
+        padding: 24px 40px 40px;
+        gap: 18px;
+    }
+
+    .cart-item {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .item-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .item-name {
+        font-size: 17px;
+    }
+
+    .price-discount {
+        font-size: 18px;
+    }
+
+    .qty-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .qty-input {
+        width: 50px;
+        font-size: 17px;
+    }
+
+    .bottom-bar {
+        max-width: 900px;
+        padding: 18px 40px;
+    }
+
+    .total-amount {
+        font-size: 24px;
+    }
+
+    .checkout-btn {
+        padding: 14px 30px;
+        font-size: 16px;
     }
 }
 
