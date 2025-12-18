@@ -435,9 +435,9 @@ body {
         flex: 1;
     }
 
-    /* Hide bottom bar on desktop - move to product-info */
+    /* Hide bottom bar on desktop */
     .bottom-bar {
-        display: none;
+        display: none !important;
     }
 
     /* Desktop action buttons */

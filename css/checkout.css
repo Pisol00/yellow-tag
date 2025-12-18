@@ -19,7 +19,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     background-color: #F8E291;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@ body {
     z-index: 100;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     align-self: center;
 }
 
@@ -82,7 +82,7 @@ body {
     gap: 20px;
     padding-bottom: 100px;
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     align-self: center;
     background-color: #F8E291;
 }
@@ -424,6 +424,11 @@ body {
     color: #4E5DB7;
 }
 
+/* Desktop Confirm Button - Hidden on mobile */
+.confirm-btn-desktop {
+    display: none;
+}
+
 /* Bottom Action Bar */
 .bottom-bar {
     background-color: #4E5DB7;
@@ -436,7 +441,7 @@ body {
     position: sticky;
     bottom: 0;
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     align-self: center;
 }
 
@@ -527,11 +532,11 @@ body {
 
 @media (min-width: 429px) {
     body {
-        background-color: #e5e5e5;
+        background-color: #F8E291;
     }
 
     .container {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        box-shadow: none;
     }
 }
 
@@ -555,22 +560,69 @@ body {
     }
 
     .main-content {
-        max-width: 800px;
-        padding: 20px 30px 30px;
-        gap: 18px;
+        max-width: 1400px;
+        padding: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    /* Card wrapper for desktop */
+    .checkout-card {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     }
 
     .section-title {
-        font-size: 18px;
-        margin-bottom: 14px;
+        font-size: 20px;
+        margin-bottom: 16px;
     }
 
     .order-summary,
     .delivery-section,
     .payment-section,
     .price-summary {
-        padding: 20px;
-        border-radius: 16px;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        border-bottom: 2px solid rgba(78, 93, 183, 0.08);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .price-summary {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    /* Desktop Confirm Button */
+    .confirm-btn-desktop {
+        display: block;
+        width: 100%;
+        margin-top: 24px;
+        background: linear-gradient(135deg, #F4D483 0%, #E8B849 100%);
+        color: #4E5DB7;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 16px 24px;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(232, 184, 73, 0.3);
+    }
+
+    .confirm-btn-desktop:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 184, 73, 0.4);
+    }
+
+    .confirm-btn-desktop:active {
+        transform: translateY(0);
     }
 
     .product-item {
@@ -631,10 +683,9 @@ body {
         font-size: 20px;
     }
 
+    /* Hide bottom bar on desktop */
     .bottom-bar {
-        width: 100%;
-        max-width: 800px;
-        padding: 18px 30px;
+        display: none !important;
     }
 
     .total-amount {
@@ -662,22 +713,31 @@ body {
     }
 
     .main-content {
-        max-width: 900px;
-        padding: 24px 40px 40px;
-        gap: 20px;
+        max-width: 1500px;
+        padding: 50px;
+        padding-bottom: 50px;
+        gap: 0;
+    }
+
+    .checkout-card {
+        border-radius: 28px;
+        padding: 40px;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     .section-title {
-        font-size: 19px;
-        margin-bottom: 15px;
+        font-size: 22px;
+        margin-bottom: 18px;
     }
 
     .order-summary,
     .delivery-section,
     .payment-section,
     .price-summary {
-        padding: 22px;
-        border-radius: 18px;
+        padding-bottom: 28px;
+        margin-bottom: 28px;
     }
 
     .product-image {
@@ -734,8 +794,7 @@ body {
     }
 
     .bottom-bar {
-        max-width: 900px;
-        padding: 20px 40px;
+        display: none !important;
     }
 
     .total-amount {

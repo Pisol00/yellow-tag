@@ -73,61 +73,68 @@ function loadCheckoutDetails() {
     }).join('');
 
     const checkoutHTML = `
-        <!-- Order Summary -->
-        <section class="order-summary">
-            <h2 class="section-title">สรุปคำสั่งซื้อ</h2>
-            ${productItemsHTML}
-        </section>
+        <div class="checkout-card">
+            <!-- Order Summary -->
+            <section class="order-summary">
+                <h2 class="section-title">สรุปคำสั่งซื้อ</h2>
+                ${productItemsHTML}
+            </section>
 
-        <!-- Delivery Address -->
-        <section class="delivery-section">
-            <h2 class="section-title">ที่อยู่จัดส่ง</h2>
-            <div class="address-card">
-                <div class="address-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
-                    </svg>
+            <!-- Delivery Address -->
+            <section class="delivery-section">
+                <h2 class="section-title">ที่อยู่จัดส่ง</h2>
+                <div class="address-card">
+                    <div class="address-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="address-details">
+                        <p class="address-name">${deliveryAddress.name}</p>
+                        <p class="address-text">${deliveryAddress.address}</p>
+                        <p class="address-phone">โทร: ${deliveryAddress.phone}</p>
+                    </div>
                 </div>
-                <div class="address-details">
-                    <p class="address-name">${deliveryAddress.name}</p>
-                    <p class="address-text">${deliveryAddress.address}</p>
-                    <p class="address-phone">โทร: ${deliveryAddress.phone}</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Payment Method -->
-        <section class="payment-section">
-            <h2 class="section-title">วิธีการชำระเงิน</h2>
-            <div class="payment-options">
-                ${paymentOptionsHTML}
-            </div>
-        </section>
+            <!-- Payment Method -->
+            <section class="payment-section">
+                <h2 class="section-title">วิธีการชำระเงิน</h2>
+                <div class="payment-options">
+                    ${paymentOptionsHTML}
+                </div>
+            </section>
 
-        <!-- Price Summary -->
-        <section class="price-summary">
-            <h2 class="section-title">สรุปราคา</h2>
-            <div class="price-breakdown">
-                <div class="price-row">
-                    <span class="price-label">ราคาสินค้า</span>
-                    <span class="price-value">฿${subtotal}</span>
+            <!-- Price Summary -->
+            <section class="price-summary">
+                <h2 class="section-title">สรุปราคา</h2>
+                <div class="price-breakdown">
+                    <div class="price-row">
+                        <span class="price-label">ราคาสินค้า</span>
+                        <span class="price-value">฿${subtotal}</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">ค่าจัดส่ง</span>
+                        <span class="price-value">฿${shipping}</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">ส่วนลด</span>
+                        <span class="price-value discount">-฿${discount}</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="price-row total">
+                        <span class="price-label">ยอดรวมทั้งหมด</span>
+                        <span class="price-value">฿${total}</span>
+                    </div>
                 </div>
-                <div class="price-row">
-                    <span class="price-label">ค่าจัดส่ง</span>
-                    <span class="price-value">฿${shipping}</span>
-                </div>
-                <div class="price-row">
-                    <span class="price-label">ส่วนลด</span>
-                    <span class="price-value discount">-฿${discount}</span>
-                </div>
-                <div class="divider"></div>
-                <div class="price-row total">
-                    <span class="price-label">ยอดรวมทั้งหมด</span>
-                    <span class="price-value">฿${total}</span>
-                </div>
-            </div>
-        </section>
+
+                <!-- Desktop Confirm Button -->
+                <button class="confirm-btn-desktop" id="confirmBtnDesktop">
+                    ยืนยันคำสั่งซื้อ
+                </button>
+            </section>
+        </div>
     `;
 
     checkoutContent.innerHTML = checkoutHTML;
@@ -178,12 +185,23 @@ function initializeEventListeners() {
         });
     });
 
-    // Confirm button functionality
+    // Confirm button functionality (mobile)
     const confirmBtn = document.getElementById('confirmBtn');
-    confirmBtn.addEventListener('click', function() {
-        // Redirect to success page after confirmation
-        window.location.href = 'success.html';
-    });
+    if (confirmBtn) {
+        confirmBtn.addEventListener('click', function() {
+            // Redirect to success page after confirmation
+            window.location.href = 'success.html';
+        });
+    }
+
+    // Confirm button functionality (desktop)
+    const confirmBtnDesktop = document.getElementById('confirmBtnDesktop');
+    if (confirmBtnDesktop) {
+        confirmBtnDesktop.addEventListener('click', function() {
+            // Redirect to success page after confirmation
+            window.location.href = 'success.html';
+        });
+    }
 
     // Add ripple effect to buttons
     const buttons = document.querySelectorAll('button');
