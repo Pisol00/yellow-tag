@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'SF Pro Display', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #F8E291;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 428px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 32%, #F8E291 32%, #F8E291 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section */
+.header {
+    background-color: #4E5DB7;
+    text-align: center;
+    padding: 30px 20px 25px;
+    color: white;
+}
+
+.logo-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #F4D483 0%, #E8B849 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-circle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+}
+
+.logo-text {
+    position: absolute;
+    top: 12px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #B88F3C;
+    letter-spacing: 1.5px;
+    text-align: center;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.cart-icon {
+    width: 45px;
+    height: 45px;
+    margin-top: 18px;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #F8E291;
+    margin-bottom: 8px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #F8E291;
+    opacity: 0.9;
+    letter-spacing: 0.2px;
+}
+
+/* Form Section */
+.form-container {
+    flex: 1;
+    background-color: #F8E291;
+    padding: 30px 25px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 12px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 14px;
+    background-color: #F4D483;
+    color: #4E5DB7;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #4E5DB7;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    background-color: #F0C75F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    color: #4E5DB7;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 12px 0 20px;
+    transition: all 0.2s ease;
+}
+
+.forgot-password:hover {
+    opacity: 0.7;
+}
+
+.btn-signin {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #F8E291;
+    background-color: #4E5DB7;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 3px 16px rgba(78, 93, 183, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.btn-signin:hover {
+    background-color: #3d4a93;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(78, 93, 183, 0.35);
+}
+
+.btn-signin:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 16px rgba(78, 93, 183, 0.25);
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    height: 1px;
+    background-color: rgba(196, 168, 80, 0.3);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 43%;
+    height: 1px;
+    background-color: rgba(196, 168, 80, 0.3);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F8E291;
+    padding: 0 15px;
+    color: #4E5DB7;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+/* Social Buttons */
+.btn-social {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.btn-social:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-social:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.btn-social .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-apple {
+    background-color: #F4D483;
+    color: #4E5DB7;
+}
+
+.btn-phone {
+    background-color: #F4D483;
+    color: #4E5DB7;
+}
+
+.btn-google {
+    background-color: #F4D483;
+    color: #4E5DB7;
+}
+
+.signup-text {
+    text-align: center;
+    color: #4E5DB7;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 428px) {
+    .header {
+        padding: 25px 20px 22px;
+    }
+
+    .logo-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cart-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 7px;
+        top: 11px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .form-container {
+        padding: 25px 22px 25px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+
+    .btn-signin {
+        font-size: 16px;
+        padding: 13px;
+    }
+
+    .btn-social {
+        font-size: 13px;
+        padding: 11px;
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .logo-circle {
+        width: 85px;
+        height: 85px;
+    }
+
+    .cart-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .form-container {
+        padding: 22px 20px 22px;
+    }
+}
+
+@media (min-width: 429px) {
+    body {
+        background-color: #e5e5e5;
+    }
+
+    .container {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-radius: 0;
+        overflow: hidden;
+    }
+}
