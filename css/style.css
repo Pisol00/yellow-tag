@@ -125,13 +125,13 @@ input[type="password"]:focus {
 }
 
 .forgot-password {
-    display: block;
-    text-align: right;
+    display: inline-block;
     color: #4E5DB7;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
     padding: 5px 0;
+    float: right;
     transition: all 0.2s ease;
 }
 
