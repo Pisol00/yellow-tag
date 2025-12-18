@@ -12,13 +12,6 @@ function loadProfile() {
                         <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V22H4V20Z" fill="currentColor"/>
                     </svg>
                 </div>
-                <button class="camera-btn">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
-                        <path d="M9 3L7 6H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="12" cy="13" r="3" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </button>
             </div>
             <h2 class="profile-name">${userProfile.name}</h2>
             <p class="profile-email">${userProfile.email}</p>
@@ -113,20 +106,6 @@ function initializeEventListeners() {
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', function() {
         window.location.href = 'home.html';
-    });
-
-    // Edit button functionality
-    const editBtn = document.getElementById('editBtn');
-    editBtn.addEventListener('click', function() {
-        console.log('Edit profile clicked');
-        alert('แก้ไขโปรไฟล์');
-    });
-
-    // Camera button functionality
-    const cameraBtn = document.querySelector('.camera-btn');
-    cameraBtn.addEventListener('click', function() {
-        console.log('Change profile picture clicked');
-        alert('เปลี่ยนรูปโปรไฟล์');
     });
 
     // Logout button functionality

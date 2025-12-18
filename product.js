@@ -71,13 +71,6 @@ function initializeEventListeners() {
         window.location.href = 'home.html';
     });
 
-    // Menu button functionality
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', function() {
-        console.log('Menu clicked');
-        alert('เมนู');
-    });
-
     // Chat button functionality
     const chatBtn = document.getElementById('chatBtn');
     chatBtn.addEventListener('click', function() {

@@ -84,8 +84,10 @@ productsSwiper.forEach((swiper) => {
     new Swiper(swiper, {
         slidesPerView: 'auto',
         spaceBetween: 15,
-        freeMode: true,
-        grabCursor: true,
+        freeMode: false,
+        grabCursor: false,
+        allowTouchMove: false,
+        simulateTouch: false,
     });
 });
 
