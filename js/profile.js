@@ -111,12 +111,9 @@ function initializeEventListeners() {
     // Logout button functionality
     const logoutBtn = document.getElementById('logoutBtn');
     logoutBtn.addEventListener('click', function() {
-        if (confirm('คุณต้องการออกจากระบบใช่หรือไม่?')) {
-            console.log('Logging out...');
-            alert('กำลังออกจากระบบ...');
-            // Redirect to sign in page
-            window.location.href = '../index.html';
-        }
+        console.log('Logging out...');
+        // Redirect to sign in page
+        window.location.href = '../index.html';
     });
 
     // Add ripple effect to buttons

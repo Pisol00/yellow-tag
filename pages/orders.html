@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yellow Tag Sale - ประวัติการสั่งซื้อ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/orders.css">
 </head>
 <body>
@@ -22,11 +26,21 @@
         <!-- Main Content -->
         <main class="main-content">
             <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-status="all">ทั้งหมด</button>
-                <button class="filter-tab" data-status="processing">กำลังดำเนินการ</button>
-                <button class="filter-tab" data-status="shipped">กำลังจัดส่ง</button>
-                <button class="filter-tab" data-status="completed">สำเร็จ</button>
+            <div class="swiper filterTabsSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <button class="filter-tab active" data-status="all">ทั้งหมด</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button class="filter-tab" data-status="processing">กำลังดำเนินการ</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button class="filter-tab" data-status="shipped">กำลังจัดส่ง</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button class="filter-tab" data-status="completed">สำเร็จ</button>
+                    </div>
+                </div>
             </div>
 
             <!-- Orders List -->
@@ -43,9 +57,27 @@
                 </svg>
                 <p class="empty-text">ยังไม่มีประวัติการสั่งซื้อ</p>
             </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="paginationContainer" style="display: none;">
+                <button class="pagination-btn prev-btn" id="prevPageBtn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="pagination-dots" id="paginationDots">
+                    <!-- Dots will be dynamically generated -->
+                </div>
+                <button class="pagination-btn next-btn" id="nextPageBtn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/data.js"></script>
     <script src="../js/orders.js"></script>
 </body>

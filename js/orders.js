@@ -1,3 +1,10 @@
+// Pagination variables
+let currentPage = 1;
+let itemsPerPage = 3;
+let currentFilter = 'all';
+let filteredOrders = [];
+let eventListenersInitialized = false;
+
 // Load orders from data.js
 function loadOrders() {
     const ordersListContainer = document.getElementById('ordersListContainer');
@@ -5,8 +12,19 @@ function loadOrders() {
     // Clear container
     ordersListContainer.innerHTML = '';
 
+    // Get filtered orders based on current filter
+    filteredOrders = currentFilter === 'all'
+        ? ordersData
+        : ordersData.filter(order => order.status === currentFilter);
+
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const ordersToShow = filteredOrders.slice(startIndex, endIndex);
+
     // Generate orders HTML
-    ordersData.forEach(order => {
+    ordersToShow.forEach(order => {
         const orderWithDetails = dataHelpers.getOrderWithDetails(order.id);
 
         // Generate order items HTML
@@ -60,12 +78,60 @@ function loadOrders() {
         ordersListContainer.innerHTML += orderHTML;
     });
 
-    // Initialize event listeners
-    initializeEventListeners();
+    // Update pagination UI
+    updatePaginationUI(totalPages);
 }
 
-// Initialize event listeners
+// Update pagination UI
+function updatePaginationUI(totalPages) {
+    const paginationContainer = document.getElementById('paginationContainer');
+    const paginationDots = document.getElementById('paginationDots');
+    const prevBtn = document.getElementById('prevPageBtn');
+    const nextBtn = document.getElementById('nextPageBtn');
+    const emptyState = document.querySelector('.empty-state');
+    const ordersList = document.querySelector('.orders-list');
+
+    // Show/hide pagination
+    if (filteredOrders.length > itemsPerPage) {
+        paginationContainer.style.display = 'flex';
+    } else {
+        paginationContainer.style.display = 'none';
+    }
+
+    // Show/hide empty state
+    if (filteredOrders.length === 0) {
+        ordersList.style.display = 'none';
+        emptyState.style.display = 'flex';
+        paginationContainer.style.display = 'none';
+    } else {
+        ordersList.style.display = 'flex';
+        emptyState.style.display = 'none';
+    }
+
+    // Generate pagination dots
+    paginationDots.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'pagination-dot';
+        if (i === currentPage) {
+            dot.classList.add('active');
+        }
+        // Use data attribute instead of event listener
+        dot.setAttribute('data-page', i);
+        paginationDots.appendChild(dot);
+    }
+
+    // Update button states
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+}
+
+// Initialize event listeners (called once on page load)
 function initializeEventListeners() {
+    if (eventListenersInitialized) {
+        return;
+    }
+
     // Back button functionality
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', function() {
@@ -74,9 +140,6 @@ function initializeEventListeners() {
 
     // Filter tabs functionality
     const filterTabs = document.querySelectorAll('.filter-tab');
-    const orderCards = document.querySelectorAll('.order-card');
-    const emptyState = document.querySelector('.empty-state');
-    const ordersList = document.querySelector('.orders-list');
 
     filterTabs.forEach(tab => {
         tab.addEventListener('click', function() {
@@ -86,36 +149,63 @@ function initializeEventListeners() {
             this.classList.add('active');
 
             // Get filter status
-            const filterStatus = this.getAttribute('data-status');
+            currentFilter = this.getAttribute('data-status');
 
-            // Filter orders
-            let visibleCount = 0;
-            orderCards.forEach(card => {
-                const cardStatus = card.getAttribute('data-status');
-                if (filterStatus === 'all' || cardStatus === filterStatus) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            // Reset to page 1 when filter changes
+            currentPage = 1;
 
-            // Show empty state if no orders visible
-            if (visibleCount === 0) {
-                ordersList.style.display = 'none';
-                emptyState.style.display = 'flex';
-            } else {
-                ordersList.style.display = 'flex';
-                emptyState.style.display = 'none';
-            }
+            // Reload orders with new filter
+            loadOrders();
         });
     });
+
+    // Pagination buttons
+    const prevBtn = document.getElementById('prevPageBtn');
+    const nextBtn = document.getElementById('nextPageBtn');
+    const paginationDots = document.getElementById('paginationDots');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadOrders();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                loadOrders();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
+
+    // Pagination dots - use event delegation
+    if (paginationDots) {
+        paginationDots.addEventListener('click', function(e) {
+            if (e.target.classList.contains('pagination-dot')) {
+                const pageNumber = parseInt(e.target.getAttribute('data-page'));
+                if (pageNumber && pageNumber !== currentPage) {
+                    currentPage = pageNumber;
+                    loadOrders();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+    }
 
     // Add ripple effect to buttons
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         button.addEventListener('click', createRipple);
     });
+
+    eventListenersInitialized = true;
 }
 
 // Add ripple effect to buttons
@@ -163,7 +253,19 @@ document.head.appendChild(style);
 console.log('%c🛒 Yellow Tag Sale - Order History', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
 console.log('%cประวัติการสั่งซื้อของคุณ', 'color: #E8B849; font-size: 14px;');
 
+// Initialize Filter Tabs Swiper
+function initializeFilterTabsSwiper() {
+    new Swiper('.filterTabsSwiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        freeMode: true,
+        grabCursor: true,
+    });
+}
+
 // Load orders when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    initializeEventListeners();
     loadOrders();
+    initializeFilterTabsSwiper();
 });

@@ -256,6 +256,54 @@ const ordersData = [
         shipping: 30,
         discount: 0,
         total: 380
+    },
+    {
+        id: 'YTS-2024-005',
+        date: '14 ธันวาคม 2567',
+        status: 'shipped',
+        statusText: 'กำลังจัดส่ง',
+        items: [
+            {
+                productId: 5,
+                quantity: 2
+            }
+        ],
+        subtotal: 240,
+        shipping: 30,
+        discount: 0,
+        total: 270
+    },
+    {
+        id: 'YTS-2024-006',
+        date: '13 ธันวาคม 2567',
+        status: 'processing',
+        statusText: 'กำลังเตรียมสินค้า',
+        items: [
+            {
+                productId: 6,
+                quantity: 1
+            }
+        ],
+        subtotal: 90,
+        shipping: 20,
+        discount: 0,
+        total: 110
+    },
+    {
+        id: 'YTS-2024-007',
+        date: '12 ธันวาคม 2567',
+        status: 'completed',
+        statusText: 'สำเร็จ',
+        items: [
+            {
+                productId: 7,
+                quantity: 1
+            }
+        ],
+        subtotal: 54,
+        shipping: 20,
+        discount: 0,
+        total: 74
     }
 ];
 

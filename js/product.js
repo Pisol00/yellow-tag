@@ -44,13 +44,14 @@ function loadProductDetails() {
             <!-- Delivery Info -->
             <div class="delivery-info">
                 <svg class="delivery-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 3H16V13H1V3Z" fill="currentColor"/>
-                    <path d="M16 6H19L23 10V13H16V6Z" fill="currentColor"/>
-                    <circle cx="5" cy="18" r="2" fill="currentColor"/>
-                    <circle cx="19" cy="18" r="2" fill="currentColor"/>
+                    <path d="M1 4H15V12H1V4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M15 7H18L22 11V15H15V7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="18" r="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M1 12H15V15H1V12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 </svg>
                 <div class="delivery-text">
-                    <p class="delivery-date">${product.delivery} • ${product.deliveryTime}</p>
+                    <p class="delivery-date">${product.delivery} ${product.deliveryTime}</p>
                     <p class="delivery-location">${product.description}</p>
                 </div>
             </div>

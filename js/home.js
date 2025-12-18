@@ -281,31 +281,33 @@ function initializeProductObserver() {
     });
 }
 
-// Touch gestures for mobile
+// Touch gestures for mobile - DISABLED
+// Menu can only be opened by clicking the menu button
 let touchStartX = 0;
 let touchEndX = 0;
 
-document.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-}, false);
+// Commented out to disable swipe gesture
+// document.addEventListener('touchstart', function(e) {
+//     touchStartX = e.changedTouches[0].screenX;
+// }, false);
 
-document.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, false);
+// document.addEventListener('touchend', function(e) {
+//     touchEndX = e.changedTouches[0].screenX;
+//     handleSwipe();
+// }, false);
 
-function handleSwipe() {
-    // Swipe right to open menu
-    if (touchEndX - touchStartX > 100 && !sideMenu.classList.contains('active')) {
-        sideMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    // Swipe left to close menu
-    if (touchStartX - touchEndX > 100 && sideMenu.classList.contains('active')) {
-        sideMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
+// function handleSwipe() {
+//     // Swipe right to open menu
+//     if (touchEndX - touchStartX > 100 && !sideMenu.classList.contains('active')) {
+//         sideMenu.classList.add('active');
+//         document.body.style.overflow = 'hidden';
+//     }
+//     // Swipe left to close menu
+//     if (touchStartX - touchEndX > 100 && sideMenu.classList.contains('active')) {
+//         sideMenu.classList.remove('active');
+//         document.body.style.overflow = '';
+//     }
+// }
 
 // Add ripple effect to buttons
 function createRipple(event) {

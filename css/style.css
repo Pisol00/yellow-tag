@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'SF Pro Display', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: #F8E291;
     min-height: 100vh;
     display: flex;
@@ -54,23 +54,11 @@ body {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
 }
 
-.logo-text {
-    position: absolute;
-    top: 12px;
-    font-size: 8px;
-    font-weight: 700;
-    color: #B88F3C;
-    letter-spacing: 1.5px;
-    text-align: center;
-    line-height: 1.2;
+.logo-img {
     width: 100%;
-}
-
-.cart-icon {
-    width: 45px;
-    height: 45px;
-    margin-top: 18px;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .title {
@@ -107,7 +95,8 @@ form {
     margin-bottom: 12px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 14px 20px;
     font-size: 15px;
@@ -121,13 +110,15 @@ input[type="text"] {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-input[type="text"]::placeholder {
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
     color: #4E5DB7;
     opacity: 0.7;
     font-weight: 500;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
     background-color: #F0C75F;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -135,17 +126,18 @@ input[type="text"]:focus {
 
 .forgot-password {
     display: block;
-    text-align: center;
+    text-align: right;
     color: #4E5DB7;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    margin: 12px 0 20px;
+    padding: 5px 0;
     transition: all 0.2s ease;
 }
 
 .forgot-password:hover {
     opacity: 0.7;
+    text-decoration: underline;
 }
 
 .btn-signin {
@@ -272,6 +264,19 @@ input[type="text"]:focus {
     opacity: 0.8;
 }
 
+.toggle-link {
+    color: #4E5DB7;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    opacity: 1;
+}
+
+.toggle-link:hover {
+    color: #3d4a93;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 428px) {
     .header {
@@ -286,11 +291,6 @@ input[type="text"]:focus {
     .cart-icon {
         width: 40px;
         height: 40px;
-    }
-
-    .logo-text {
-        font-size: 7px;
-        top: 11px;
     }
 
     .title {
