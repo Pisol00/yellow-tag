@@ -1,3 +1,26 @@
+// Load banners from data.js
+function loadBanners() {
+    const bannerContainer = document.getElementById('bannerContainer');
+    bannerContainer.innerHTML = '';
+
+    bannersData.forEach(banner => {
+        const bannerHTML = `
+            <div class="swiper-slide">
+                <div class="banner-item">
+                    <div class="banner-logo">
+                        <img src="${banner.image}" alt="${banner.title}" class="banner-image">
+                    </div>
+                    <div class="banner-text">
+                        <h2>${banner.title}</h2>
+                        <p>${banner.subtitle}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        bannerContainer.innerHTML += bannerHTML;
+    });
+}
+
 // Load products from data.js
 function loadProducts() {
     const productsContainer = document.getElementById('productsContainer');
@@ -333,6 +356,7 @@ function initializeRippleEffect() {
 
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    loadBanners();
     loadProducts();
     initializeBannerSwiper();
     initializeRippleEffect();

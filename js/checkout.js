@@ -13,25 +13,49 @@ function loadCheckoutDetails() {
     // Calculate totals
     const subtotal = dataHelpers.calculateCartTotal(true);
     const shipping = 20;
-    const discount = 0;
-    const total = subtotal + shipping - discount;
+    
+    // Calculate actual discount (original price - discounted price)
+    let discount = 0;
+    cartItems.forEach(item => {
+        const product = item.product;
+        const originalTotal = product.price * item.quantity;
+        const discountedTotal = product.discountPrice * item.quantity;
+        discount += (originalTotal - discountedTotal);
+    });
+    
+    const originalSubtotal = subtotal + discount;
+    const total = subtotal + shipping;
 
     // Generate product items HTML
     const productItemsHTML = cartItems.map(item => {
         const product = item.product;
+        const itemTotal = product.discountPrice * item.quantity;
+        const originalTotal = product.price * item.quantity;
+        const savings = originalTotal - itemTotal;
         return `
             <div class="product-item">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
+                    ${product.discount > 0 ? `<div class="item-discount-badge">-${product.discount}%</div>` : ''}
                 </div>
                 <div class="product-details">
                     <h3 class="product-name">${product.name}</h3>
-                    <p class="product-quantity">จำนวน: ${item.quantity}</p>
-                    <p class="product-price">฿${product.discountPrice * item.quantity}</p>
+                    <p class="product-shop"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg> ${product.shop}</p>
+                    <div class="product-price-row">
+                        <div class="quantity-info">
+                            <span class="quantity-label">จำนวน:</span>
+                            <span class="quantity-value">×${item.quantity}</span>
+                        </div>
+                        <div class="price-info">
+                            ${originalTotal > itemTotal ? `<span class="price-original">฿${originalTotal}</span>` : ''}
+                            <span class="product-price">฿${itemTotal}</span>
+                        </div>
+                    </div>
+                    ${savings > 0 ? `<div class="savings-badge">ประหยัด ฿${savings}</div>` : ''}
                 </div>
             </div>
         `;
-    }).join('');
+    }).join('<div class="item-divider"></div>');
 
     // Generate payment options HTML
     const paymentOptionsHTML = paymentMethods.map((method, index) => {

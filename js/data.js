@@ -346,18 +346,27 @@ const paymentMethods = [
 const bannersData = [
     {
         id: 1,
-        image: 'https://via.placeholder.com/400x200/4E5DB7/F8E291?text=Sale+40%25',
-        title: 'Sale 40%'
+        image: 'https://via.placeholder.com/150/F4D483/4E5DB7?text=Sale',
+        title: 'โปรโมชันลดแรง!',
+        subtitle: 'แซงทุกเรื่องแพง!'
     },
     {
         id: 2,
-        image: 'https://via.placeholder.com/400x200/E8B849/4E5DB7?text=New+Arrival',
-        title: 'New Arrival'
+        image: 'https://via.placeholder.com/150/F4D483/4E5DB7?text=70%25',
+        title: 'ลดสูงสุด 70%',
+        subtitle: 'ทุกหมวดหมู่!'
     },
     {
         id: 3,
-        image: 'https://via.placeholder.com/400x200/F4D483/4E5DB7?text=Free+Shipping',
-        title: 'Free Shipping'
+        image: 'https://via.placeholder.com/150/F4D483/4E5DB7?text=Free',
+        title: 'ฟรีค่าส่ง!',
+        subtitle: 'สั่งขั้นต่ำ 299฿'
+    },
+    {
+        id: 4,
+        image: 'https://via.placeholder.com/150/F4D483/4E5DB7?text=Free',
+        title: 'สินค้าพิเศษ!',
+        subtitle: 'ดีลเด็ดวันนี้'
     }
 ];
 
