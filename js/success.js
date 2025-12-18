@@ -18,6 +18,15 @@ backHomeBtn.addEventListener('click', function() {
     window.location.href = '../home.html';
 });
 
+// Top nav back button functionality
+const backBtn = document.getElementById('backBtn');
+
+if (backBtn) {
+    backBtn.addEventListener('click', function() {
+        window.location.href = '../home.html';
+    });
+}
+
 // Add ripple effect to buttons
 function createRipple(event) {
     const button = event.currentTarget;
