@@ -111,7 +111,6 @@ function initializeEventListeners() {
     // Logout button functionality
     const logoutBtn = document.getElementById('logoutBtn');
     logoutBtn.addEventListener('click', function() {
-        console.log('Logging out...');
         // Redirect to sign in page
         window.location.href = '../index.html';
     });
@@ -163,10 +162,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Console welcome message
-console.log('%c👤 Yellow Tag Sale - Profile', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cโปรไฟล์ของคุณ', 'color: #E8B849; font-size: 14px;');
 
 // Load profile when page loads
 document.addEventListener('DOMContentLoaded', function() {

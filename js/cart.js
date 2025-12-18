@@ -69,7 +69,6 @@ function initializeEventListeners() {
     checkoutBtn.addEventListener('click', function() {
         const selectedItems = document.querySelectorAll('.item-checkbox:checked');
         if (selectedItems.length > 0) {
-            console.log('Checkout clicked with', selectedItems.length, 'items');
             window.location.href = 'checkout.html';
         } else {
             alert('กรุณาเลือกสินค้าที่ต้องการสั่งซื้อ');
@@ -265,10 +264,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Console welcome message
-console.log('%c🛒 Yellow Tag Sale - Shopping Cart', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cตะกร้าสินค้าของคุณ', 'color: #E8B849; font-size: 14px;');
 
 // Load cart items when page loads
 document.addEventListener('DOMContentLoaded', function() {

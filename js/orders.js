@@ -249,10 +249,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Console welcome message
-console.log('%c🛒 Yellow Tag Sale - Order History', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cประวัติการสั่งซื้อของคุณ', 'color: #E8B849; font-size: 14px;');
-
 // Initialize Filter Tabs Swiper
 function initializeFilterTabsSwiper() {
     new Swiper('.filterTabsSwiper', {

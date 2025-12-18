@@ -157,7 +157,6 @@ function initializeEventListeners() {
     // Confirm button functionality
     const confirmBtn = document.getElementById('confirmBtn');
     confirmBtn.addEventListener('click', function() {
-        console.log('Order confirmed');
         // Redirect to success page after confirmation
         window.location.href = 'success.html';
     });
@@ -210,9 +209,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Console welcome message
-console.log('%c🛒 Yellow Tag Sale - Checkout', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cยืนยันคำสั่งซื้อของคุณ!', 'color: #E8B849; font-size: 14px;');
 
 // Load checkout when page loads
 document.addEventListener('DOMContentLoaded', function() {

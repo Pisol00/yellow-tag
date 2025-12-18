@@ -4,7 +4,6 @@ function loadProductDetails() {
     const product = dataHelpers.getProductById(1);
 
     if (!product) {
-        console.error('Product not found');
         return;
     }
 
@@ -75,21 +74,17 @@ function initializeEventListeners() {
     // Chat button functionality
     const chatBtn = document.getElementById('chatBtn');
     chatBtn.addEventListener('click', function() {
-        console.log('Chat clicked');
-        alert('แชทกับร้านค้า');
     });
 
     // Cart button functionality
     const cartBtn = document.getElementById('cartBtn');
     cartBtn.addEventListener('click', function() {
-        console.log('Cart clicked');
         window.location.href = 'cart.html';
     });
 
     // Checkout button functionality
     const checkoutBtn = document.getElementById('checkoutBtn');
     checkoutBtn.addEventListener('click', function() {
-        console.log('Checkout clicked');
         window.location.href = 'checkout.html';
     });
 
@@ -140,10 +135,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Console welcome message
-console.log('%c🛍️ Yellow Tag Sale - Product Detail', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cรายละเอียดสินค้า', 'color: #E8B849; font-size: 14px;');
 
 // Load product when page loads
 document.addEventListener('DOMContentLoaded', function() {

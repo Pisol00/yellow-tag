@@ -134,7 +134,6 @@ const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', function() {
     const searchQuery = searchInput.value.trim();
     if (searchQuery) {
-        console.log('ค้นหา:', searchQuery);
         alert(`กำลังค้นหา: ${searchQuery}`);
         // Here you would typically send the search query to your backend
     } else {
@@ -153,7 +152,6 @@ searchInput.addEventListener('keypress', function(e) {
 const userBtn = document.getElementById('userBtn');
 
 userBtn.addEventListener('click', function() {
-    console.log('User profile clicked');
     // Navigate to user profile page
     window.location.href = 'pages/profile.html';
 });
@@ -195,7 +193,6 @@ function initializeProductCardClicks() {
     productCards.forEach((card) => {
         card.addEventListener('click', function() {
             const productName = this.querySelector('.product-name').textContent;
-            console.log('Product clicked:', productName);
             // Navigate to product detail page
             window.location.href = 'pages/product.html';
         });
@@ -210,7 +207,6 @@ function initializeViewAllButtons() {
         btn.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent event bubbling
             const sectionTitle = this.parentElement.querySelector('h3').textContent;
-            console.log('View all clicked:', sectionTitle);
             alert(`ดูทั้งหมดในหมวด: ${sectionTitle}`);
             // Navigate to category page
             // window.location.href = `category.html?name=${encodeURIComponent(sectionTitle)}`;
@@ -223,7 +219,6 @@ const logoutBtn = document.querySelector('.logout-btn');
 
 logoutBtn.addEventListener('click', function() {
     if (confirm('คุณต้องการออกจากระบบใช่หรือไม่?')) {
-        console.log('Logging out...');
         alert('กำลังออกจากระบบ...');
         // Redirect to sign in page
         window.location.href = '../index.html';
@@ -343,10 +338,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeRippleEffect();
 });
 
-// Console welcome message
-console.log('%c🛒 Yellow Tag Sale - Home Page', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cยินดีต้อนรับสู่หน้าหลัก!', 'color: #E8B849; font-size: 14px;');
-
 // Handle back button
 window.addEventListener('popstate', function() {
     if (sideMenu.classList.contains('active')) {
@@ -357,7 +348,6 @@ window.addEventListener('popstate', function() {
 
 // Add to cart functionality (placeholder)
 function addToCart(productName) {
-    console.log('Added to cart:', productName);
     // Show notification
     const notification = document.createElement('div');
     notification.textContent = `เพิ่ม ${productName} ลงตะกร้าแล้ว`;

@@ -8,7 +8,6 @@ orderDate.textContent = today.toLocaleDateString('th-TH', options);
 const orderHistoryBtn = document.getElementById('orderHistoryBtn');
 
 orderHistoryBtn.addEventListener('click', function() {
-    console.log('View order history clicked');
     window.location.href = 'orders.html';
 });
 
@@ -16,7 +15,6 @@ orderHistoryBtn.addEventListener('click', function() {
 const backHomeBtn = document.getElementById('backHomeBtn');
 
 backHomeBtn.addEventListener('click', function() {
-    console.log('Back to home clicked');
     window.location.href = '../home.html';
 });
 
@@ -65,10 +63,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Console welcome message
-console.log('%c🛒 Yellow Tag Sale - Success', 'color: #4E5DB7; font-size: 20px; font-weight: bold;');
-console.log('%cสั่งซื้อสำเร็จ! ขอบคุณที่ใช้บริการ', 'color: #E8B849; font-size: 14px;');
 
 // Auto redirect to home after 10 seconds (optional)
 // setTimeout(() => {
