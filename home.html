@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Tag Sale - หน้าหลัก</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="logo-container">
+            <div class="logo-circle">
+                <svg class="cart-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 20L24 44H52L56 20H20Z" fill="white"/>
+                    <rect x="24" y="46" width="4" height="4" rx="2" fill="white"/>
+                    <rect x="48" y="46" width="4" height="4" rx="2" fill="white"/>
+                    <path d="M18 16H14V12H18V16Z" fill="white"/>
+                    <path d="M18 12H56L52 20H20L18 12Z" fill="white"/>
+                    <circle cx="38" cy="36" r="10" fill="white"/>
+                    <text x="38" y="42" font-size="14" fill="#E8B849" text-anchor="middle" font-weight="bold" font-family="Arial, sans-serif">%</text>
+                </svg>
+                <div class="logo-text">YELLOW TAG SALE</div>
+            </div>
+            <div class="brand-text">
+                <span class="yellow-text">yellow tag</span>
+                <span class="sale-text">sale</span>
+            </div>
+        </div>
+
+        <button class="user-btn" id="userBtn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V22H4V20Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="ค้นหาสินค้า" id="searchInput">
+            <button class="search-btn" id="searchBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Banner Slider -->
+        <section class="banner-section">
+            <div class="banner-slider" id="bannerSlider">
+                <div class="banner-item active">
+                    <div class="banner-logo">
+                        <div class="logo-circle-big">
+                            <svg class="cart-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 20L24 44H52L56 20H20Z" fill="white"/>
+                                <rect x="24" y="46" width="4" height="4" rx="2" fill="white"/>
+                                <rect x="48" y="46" width="4" height="4" rx="2" fill="white"/>
+                                <path d="M18 16H14V12H18V16Z" fill="white"/>
+                                <path d="M18 12H56L52 20H20L18 12Z" fill="white"/>
+                                <circle cx="38" cy="36" r="10" fill="white"/>
+                                <text x="38" y="42" font-size="14" fill="#E8B849" text-anchor="middle" font-weight="bold" font-family="Arial, sans-serif">%</text>
+                            </svg>
+                            <div class="logo-text">YELLOW TAG SALE</div>
+                        </div>
+                    </div>
+                    <div class="banner-text">
+                        <h2>โปร ไม่มีสัดแรง!</h2>
+                        <p>แซ่ทุกเรื่องแพง!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- Recommended Products -->
+        <section class="products-section">
+            <div class="section-header">
+                <h3>สินค้าแนะนำ</h3>
+                <button class="view-all-btn">ดูทั้งหมด</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="discount-badge">-40%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Table" alt="โต๊ะสำเร็จรูป" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">โต๊ะสำเร็จรูป</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-50%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Egg+Tart" alt="ทาร์ตไข่" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">ทาร์ตไข่</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-30%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/4E5DB7/F8E291?text=Clothes" alt="เสื้อผ้ามือสอง" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">เสื้อผ้ามือสอง</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Category -->
+        <section class="products-section">
+            <div class="section-header">
+                <h3>หมวดหมู่ : อาหาร</h3>
+                <button class="view-all-btn">ดูทั้งหมด</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Chicken+Rice" alt="ข้าวมันไก่" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">ข้าวมันไก่</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-20%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Khao+Soi" alt="ข้าวซอย" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">ข้าวซอย</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Noodles" alt="ก้วยเตี๋ยว" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">ก้วยเตี๋ยว</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/E8B849/4E5DB7?text=Fried+Rice" alt="ข้าวผัด" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">ข้าวผัด</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clothing Category -->
+        <section class="products-section">
+            <div class="section-header">
+                <h3>หมวดหมู่ : เสื้อผ้า</h3>
+                <button class="view-all-btn">ดูทั้งหมด</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Dress" alt="เสื้อและกระโปรงลายสก๊อต" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">เสื้อและกระโปรงลายสก๊อต</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Shirt" alt="เสื้อเชิตสีน้ำตาล" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">เสื้อเชิตสีน้ำตาล</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Cute+Top" alt="เสื้อสวยน่ารักมีนบอล" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">เสื้อสวยน่ารักมีนบอล</p>
+                </div>
+                <div class="product-card">
+                    <div class="discount-badge">-10%</div>
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x400/F4D483/4E5DB7?text=Flannel" alt="เสื้อฟินลายสก๊อต" onerror="this.style.display='none'">
+                    </div>
+                    <p class="product-name">เสื้อฟินลายสก๊อต</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="menu-content">
+            <div class="menu-header">
+                <h3>เมนู</h3>
+                <button class="close-menu-btn" id="closeMenuBtn">×</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="home.html">หน้าหลัก</a></li>
+                <li><a href="#">สินค้าแนะนำ</a></li>
+                <li><a href="#">อาหาร</a></li>
+                <li><a href="#">เสื้อผ้า</a></li>
+                <li><a href="#">เฟอร์นิเจอร์</a></li>
+                <li><a href="#">อิเล็กทรอนิกส์</a></li>
+                <li><a href="#">โปรโมชั่น</a></li>
+                <li><a href="#">ติดต่อเรา</a></li>
+            </ul>
+            <div class="menu-footer">
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
