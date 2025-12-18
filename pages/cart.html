@@ -23,10 +23,41 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Cart Items -->
-        <section class="cart-items" id="cartItemsContainer">
-            <!-- Cart items will be dynamically generated from data.js -->
-        </section>
+        <div class="cart-layout">
+            <!-- Cart Items -->
+            <section class="cart-items" id="cartItemsContainer">
+                <!-- Cart items will be dynamically generated from data.js -->
+            </section>
+
+            <!-- Order Summary / Desktop side column -->
+            <aside class="summary-panel bottom-bar">
+                <div class="summary-header">
+                    <div>
+                        <p class="summary-title">สรุปรายการ</p>
+                        <p class="summary-sub">ตรวจสอบยอดก่อนชำระ</p>
+                    </div>
+                    <div class="summary-count"><span class="cart-count">3</span></div>
+                </div>
+                <div class="summary-body">
+                    <div class="summary-row">
+                        <span>ยอดรวมสินค้า</span>
+                        <span class="total-amount">฿165</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>ค่าจัดส่ง</span>
+                        <span class="shipping-pill">ฟรี</span>
+                    </div>
+                    <div class="summary-note">ราคานี้รวมส่วนลดและโปรโมชันแล้ว</div>
+                </div>
+                <div class="summary-actions">
+                    <label class="select-all">
+                        <input type="checkbox" id="selectAll" checked>
+                        <span>เลือกทั้งหมด</span>
+                    </label>
+                    <button class="checkout-btn" id="checkoutBtn">สั่งซื้อ (3)</button>
+                </div>
+            </aside>
+        </div>
 
         <!-- Empty State (hidden by default) -->
         <div class="empty-state" style="display: none;">
@@ -36,24 +67,9 @@
                 <circle cx="19" cy="21" r="1" fill="currentColor"/>
             </svg>
             <p class="empty-text">ตะกร้าสินค้าว่างเปล่า</p>
-            <button class="continue-shopping-btn" onclick="window.location.href='home.html'">เลือกซื้อสินค้า</button>
+            <button class="continue-shopping-btn" onclick="window.location.href='../home.html'">เลือกซื้อสินค้า</button>
         </div>
     </main>
-
-    <!-- Bottom Bar -->
-    <div class="bottom-bar">
-        <div class="select-all">
-            <input type="checkbox" id="selectAll" checked>
-            <label for="selectAll">เลือกทั้งหมด</label>
-        </div>
-        <div class="total-section">
-            <div class="total-info">
-                <span class="total-label">รวมทั้งหมด</span>
-                <span class="total-amount">฿165</span>
-            </div>
-            <button class="checkout-btn" id="checkoutBtn">สั่งซื้อ (3)</button>
-        </div>
-    </div>
 
     <script src="../js/data.js"></script>
     <script src="../js/cart.js"></script>
