@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -19,18 +19,21 @@ body {
 
 .container {
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     min-height: 100vh;
-    background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 32%, #F8E291 32%, #F8E291 100%);
+    background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 40%, #F8E291 40%, #F8E291 100%);
     display: flex;
     flex-direction: column;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
 }
 
 /* Header Section */
 .header {
     background-color: #4E5DB7;
     text-align: center;
-    padding: 30px 20px 25px;
+    padding: 60px 20px 50px;
     color: white;
 }
 
@@ -82,9 +85,13 @@ body {
 .form-container {
     flex: 1;
     background-color: #F8E291;
-    padding: 30px 25px 30px;
+    padding: 40px 25px 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 form {
@@ -278,6 +285,123 @@ input[type="password"]:focus {
 }
 
 /* Responsive Design */
+
+/* Desktop & Tablet */
+@media (min-width: 768px) {
+    .header {
+        padding: 80px 40px 60px;
+    }
+
+    .logo-circle {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 25px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .form-container {
+        padding: 60px 40px;
+        max-width: 700px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 16px 24px;
+        font-size: 17px;
+        border-radius: 16px;
+    }
+
+    .btn-signin {
+        padding: 16px;
+        font-size: 20px;
+        border-radius: 16px;
+    }
+
+    .btn-social {
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 16px;
+    }
+
+    .btn-social .icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .signup-text {
+        font-size: 15px;
+    }
+
+    .forgot-password {
+        font-size: 14px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .header {
+        padding: 100px 60px 70px;
+    }
+
+    .logo-circle {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 56px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .form-container {
+        padding: 80px 60px;
+        max-width: 800px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 18px 26px;
+        font-size: 18px;
+    }
+
+    .btn-signin {
+        padding: 18px;
+        font-size: 22px;
+    }
+
+    .btn-social {
+        padding: 15px;
+        font-size: 17px;
+    }
+
+    .btn-social .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Mobile Landscape & Small Tablet */
+@media (max-width: 767px) and (min-width: 481px) {
+    .header {
+        padding: 50px 30px 40px;
+    }
+
+    .form-container {
+        padding: 35px 30px;
+    }
+}
+
 @media (max-width: 428px) {
     .header {
         padding: 25px 20px 22px;
@@ -305,7 +429,8 @@ input[type="password"]:focus {
         padding: 25px 22px 25px;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="password"] {
         padding: 13px 18px;
         font-size: 14px;
     }
@@ -338,17 +463,5 @@ input[type="password"]:focus {
 
     .form-container {
         padding: 22px 20px 22px;
-    }
-}
-
-@media (min-width: 429px) {
-    body {
-        background-color: #e5e5e5;
-    }
-
-    .container {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-radius: 0;
-        overflow: hidden;
     }
 }
