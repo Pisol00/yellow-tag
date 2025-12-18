@@ -19,7 +19,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     min-height: 100vh;
     background-color: #F8E291;
     display: flex;
@@ -70,18 +70,6 @@ body {
     background-color: #FFE066;
 }
 
-.logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.logo-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 
 .user-btn {
     width: 45px;
@@ -666,11 +654,11 @@ body {
 
 @media (min-width: 429px) {
     body {
-        background-color: #e5e5e5;
+        background-color: #F8E291;
     }
 
     .container {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        box-shadow: none;
         border-radius: 0;
         overflow: hidden;
     }
@@ -695,22 +683,32 @@ body {
     /* Top Navigation for Desktop */
     .top-nav {
         padding: 16px 40px;
-        gap: 14px;
+        flex-direction: row;
+        gap: 20px;
         border-radius: 0;
+        align-items: center;
+    }
+
+    .nav-header {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .menu-btn {
+        order: 0;
     }
 
     .menu-btn span {
         width: 24px;
     }
 
-    .logo-image {
-        width: 55px;
-        height: 55px;
-    }
-
     .user-btn {
         width: 48px;
         height: 48px;
+        order: 2;
     }
 
     .user-btn svg {
@@ -718,9 +716,16 @@ body {
         height: 25px;
     }
 
+    .search-container {
+        flex: 0 0 auto;
+        max-width: 400px;
+        width: 400px;
+        order: 3;
+    }
+
     .search-bar {
-        padding: 9px 16px;
-        border-radius: 22px;
+        padding: 10px 18px;
+        border-radius: 24px;
     }
 
     .search-bar input {
@@ -728,8 +733,8 @@ body {
     }
 
     .search-btn svg {
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
     }
 
     /* Main Content for Desktop */
@@ -858,9 +863,28 @@ body {
         padding: 18px 50px;
     }
 
-    .logo-image {
-        width: 60px;
-        height: 60px;
+    .search-container {
+        max-width: 450px;
+        width: 450px;
+    }
+
+    .search-bar {
+        padding: 11px 20px;
+        border-radius: 26px;
+    }
+
+    .search-bar input {
+        font-size: 16px;
+    }
+
+    .user-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .user-btn svg {
+        width: 26px;
+        height: 26px;
     }
 
     .main-content {
@@ -908,9 +932,24 @@ body {
         padding: 20px 60px;
     }
 
-    .logo-image {
-        width: 65px;
-        height: 65px;
+    .search-container {
+        max-width: 500px;
+        width: 500px;
+    }
+
+    .search-bar {
+        padding: 12px 22px;
+        border-radius: 28px;
+    }
+
+    .user-btn {
+        width: 52px;
+        height: 52px;
+    }
+
+    .user-btn svg {
+        width: 27px;
+        height: 27px;
     }
 
     .main-content {
@@ -958,9 +997,28 @@ body {
         padding: 22px 70px;
     }
 
-    .logo-image {
-        width: 70px;
-        height: 70px;
+    .search-container {
+        max-width: 550px;
+        width: 550px;
+    }
+
+    .search-bar {
+        padding: 13px 24px;
+        border-radius: 30px;
+    }
+
+    .search-bar input {
+        font-size: 16px;
+    }
+
+    .user-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .user-btn svg {
+        width: 28px;
+        height: 28px;
     }
 
     .main-content {

@@ -19,7 +19,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 32%, #F8E291 32%, #F8E291 100%);
     display: flex;
@@ -344,11 +344,11 @@ input[type="password"]:focus {
 
 @media (min-width: 429px) {
     body {
-        background-color: #e5e5e5;
+        background-color: #F8E291;
     }
 
     .container {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        box-shadow: none;
         border-radius: 0;
         overflow: hidden;
     }
@@ -357,7 +357,7 @@ input[type="password"]:focus {
 /* Tablet Responsive Design */
 @media (min-width: 600px) and (max-width: 767px) {
     .container {
-        max-width: 600px;
+        max-width: 100%;
     }
 
     .header {
@@ -438,6 +438,7 @@ input[type="password"]:focus {
 
     .subtitle {
         font-size: 15px;
+        display: none;
     }
 
     /* Form Section for Desktop */
