@@ -20,7 +20,6 @@ body {
 .container {
     width: 100%;
     max-width: 100%;
-    min-height: 100vh;
     background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 25%, #F8E291 25%, #F8E291 100%);
     display: flex;
     flex-direction: column;
