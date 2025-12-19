@@ -12,8 +12,8 @@ function loadProductDetails() {
     const productHTML = `
         <!-- Product Image -->
         <div class="product-image-container">
-            <div class="discount-badge">-${product.discount}%</div>
             <div class="product-image">
+                <div class="discount-badge">-${product.discount}%</div>
                 <img src="${product.image}" alt="${product.name}" id="productImage">
             </div>
         </div>

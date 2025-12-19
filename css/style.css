@@ -21,7 +21,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
-    background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 40%, #F8E291 40%, #F8E291 100%);
+    background: linear-gradient(180deg, #4E5DB7 0%, #4E5DB7 25%, #F8E291 25%, #F8E291 100%);
     display: flex;
     flex-direction: column;
     box-shadow: none;
@@ -33,16 +33,16 @@ body {
 .header {
     background-color: #4E5DB7;
     text-align: center;
-    padding: 60px 20px 50px;
+    padding: 30px 20px 25px;
     color: white;
 }
 
 .logo-circle {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: linear-gradient(135deg, #F4D483 0%, #E8B849 100%);
     border-radius: 50%;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,16 +65,16 @@ body {
 }
 
 .title {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
     color: #F8E291;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     line-height: 1.1;
     letter-spacing: -1.5px;
 }
 
 .subtitle {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     color: #F8E291;
     opacity: 0.9;
@@ -83,9 +83,8 @@ body {
 
 /* Form Section */
 .form-container {
-    flex: 1;
     background-color: #F8E291;
-    padding: 40px 25px 40px;
+    padding: 25px 25px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,16 +98,16 @@ form {
 }
 
 .input-group {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 14px 20px;
-    font-size: 15px;
+    padding: 12px 18px;
+    font-size: 14px;
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     background-color: #F4D483;
     color: #4E5DB7;
     font-weight: 500;
@@ -149,15 +148,15 @@ input[type="password"]:focus {
 
 .btn-signin {
     width: 100%;
-    padding: 14px;
-    font-size: 18px;
+    padding: 12px;
+    font-size: 16px;
     font-weight: 600;
     color: #F8E291;
     background-color: #4E5DB7;
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 3px 16px rgba(78, 93, 183, 0.25);
     letter-spacing: 0.5px;
@@ -177,7 +176,7 @@ input[type="password"]:focus {
 /* Divider */
 .divider {
     text-align: center;
-    margin: 20px 0;
+    margin: 15px 0;
     position: relative;
     height: 1px;
     background-color: rgba(196, 168, 80, 0.3);
@@ -217,13 +216,13 @@ input[type="password"]:focus {
 /* Social Buttons */
 .btn-social {
     width: 100%;
-    padding: 12px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 13px;
     font-weight: 500;
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -243,8 +242,8 @@ input[type="password"]:focus {
 }
 
 .btn-social .icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .btn-apple {
@@ -265,9 +264,9 @@ input[type="password"]:focus {
 .signup-text {
     text-align: center;
     color: #4E5DB7;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 10px;
     opacity: 0.8;
 }
 
@@ -289,105 +288,105 @@ input[type="password"]:focus {
 /* Desktop & Tablet */
 @media (min-width: 768px) {
     .header {
-        padding: 80px 40px 60px;
+        padding: 35px 30px 30px;
     }
 
     .logo-circle {
-        width: 130px;
-        height: 130px;
-        margin-bottom: 25px;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 18px;
     }
 
     .title {
-        font-size: 48px;
+        font-size: 32px;
     }
 
     .subtitle {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .form-container {
-        padding: 60px 40px;
-        max-width: 700px;
+        padding: 30px 35px;
+        max-width: 550px;
     }
 
     input[type="text"],
     input[type="password"] {
-        padding: 16px 24px;
-        font-size: 17px;
-        border-radius: 16px;
+        padding: 13px 20px;
+        font-size: 15px;
+        border-radius: 12px;
     }
 
     .btn-signin {
-        padding: 16px;
-        font-size: 20px;
-        border-radius: 16px;
+        padding: 13px;
+        font-size: 17px;
+        border-radius: 12px;
     }
 
     .btn-social {
-        padding: 14px;
-        font-size: 16px;
-        border-radius: 16px;
+        padding: 11px;
+        font-size: 14px;
+        border-radius: 12px;
     }
 
     .btn-social .icon {
-        width: 22px;
-        height: 22px;
+        width: 19px;
+        height: 19px;
     }
 
     .signup-text {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .forgot-password {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
 /* Large Desktop */
 @media (min-width: 1200px) {
     .header {
-        padding: 100px 60px 70px;
+        padding: 40px 40px 35px;
     }
 
     .logo-circle {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 30px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
     }
 
     .title {
-        font-size: 56px;
+        font-size: 36px;
     }
 
     .subtitle {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .form-container {
-        padding: 80px 60px;
-        max-width: 800px;
+        padding: 35px 40px;
+        max-width: 600px;
     }
 
     input[type="text"],
     input[type="password"] {
-        padding: 18px 26px;
-        font-size: 18px;
+        padding: 14px 22px;
+        font-size: 15px;
     }
 
     .btn-signin {
-        padding: 18px;
-        font-size: 22px;
+        padding: 14px;
+        font-size: 18px;
     }
 
     .btn-social {
-        padding: 15px;
-        font-size: 17px;
+        padding: 12px;
+        font-size: 14px;
     }
 
     .btn-social .icon {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 }
 

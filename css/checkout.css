@@ -74,10 +74,10 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    padding: 40px 60px;
+    padding: 25px 30px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding-bottom: 120px;
     max-width: 1400px;
     width: 100%;
@@ -86,17 +86,17 @@ body {
 
 /* Section Styles */
 .section-title {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     color: #4E5DB7;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* Order Summary */
 .order-summary {
     background-color: white;
-    padding: 30px;
-    border-radius: 24px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -234,8 +234,8 @@ body {
 /* Delivery Section */
 .delivery-section {
     background-color: white;
-    padding: 30px;
-    border-radius: 24px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -290,8 +290,8 @@ body {
 /* Payment Section */
 .payment-section {
     background-color: white;
-    padding: 30px;
-    border-radius: 24px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -370,8 +370,8 @@ body {
 /* Price Summary */
 .price-summary {
     background-color: white;
-    padding: 30px;
-    border-radius: 24px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -521,110 +521,110 @@ body {
 /* Desktop & Large Screens */
 @media (min-width: 1200px) {
     .top-nav {
-        padding: 24px 80px;
+        padding: 20px 50px;
     }
 
     .back-btn svg {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
     }
 
     .page-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .main-content {
-        padding: 50px 80px 140px;
-        max-width: 1600px;
-        gap: 40px;
+        padding: 30px 50px 40px;
+        max-width: 1200px;
+        gap: 25px;
     }
 
     .section-title {
-        font-size: 26px;
-        margin-bottom: 25px;
+        font-size: 20px;
+        margin-bottom: 18px;
     }
 
     .order-summary,
     .delivery-section,
     .payment-section,
     .price-summary {
-        padding: 40px;
-        border-radius: 28px;
+        padding: 25px;
+        border-radius: 22px;
     }
 
     .product-image {
-        width: 130px;
-        height: 130px;
-        border-radius: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 16px;
     }
 
     .product-name {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .product-shop {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .quantity-info {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .price-original {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .product-price {
-        font-size: 24px;
+        font-size: 19px;
     }
 
     .address-icon {
-        width: 70px;
-        height: 70px;
+        width: 54px;
+        height: 54px;
     }
 
     .address-icon svg {
-        width: 36px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
     }
 
     .address-name {
-        font-size: 24px;
+        font-size: 19px;
     }
 
     .address-text,
     .address-phone {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     .payment-option {
-        padding: 24px;
-        border-radius: 20px;
+        padding: 18px;
+        border-radius: 16px;
     }
 
     .payment-icon {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
     }
 
     .payment-info span {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .price-label {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .price-value {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .price-row.total .price-label {
-        font-size: 26px;
+        font-size: 21px;
     }
 
     .price-row.total .price-value {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     /* Hide bottom bar on desktop */
@@ -635,18 +635,18 @@ body {
     /* Show desktop confirm button */
     .desktop-confirm-section {
         display: block;
-        padding: 40px 80px;
-        max-width: 1600px;
+        padding: 25px 50px 30px;
+        max-width: 1200px;
     }
 
     .desktop-confirm-btn {
-        font-size: 24px;
-        padding: 20px 40px;
-        max-width: 700px;
+        font-size: 20px;
+        padding: 16px 32px;
+        max-width: 600px;
     }
 
     .main-content {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
 }
 

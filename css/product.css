@@ -94,8 +94,8 @@ body {
 .product-image-container {
     position: relative;
     width: 100%;
-    background: white;
-    padding: 40px;
+    background: transparent;
+    padding: 25px;
 }
 
 .product-image {
@@ -118,8 +118,8 @@ body {
 
 .discount-badge {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 15px;
+    right: 15px;
     background: linear-gradient(135deg, #E8B849 0%, #F4D483 100%);
     color: white;
     font-weight: 700;
@@ -132,7 +132,7 @@ body {
 
 /* Product Info */
 .product-info {
-    padding: 40px 60px;
+    padding: 20px 25px;
     background-color: #F8E291;
     flex: 1;
     max-width: 1200px;
@@ -141,15 +141,15 @@ body {
 }
 
 .product-name {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 600;
     color: #4E5DB7;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 /* Price Section */
 .price-section {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .price-row {
@@ -159,13 +159,13 @@ body {
 }
 
 .current-price {
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 700;
     color: #4E5DB7;
 }
 
 .original-price {
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 500;
     color: #4E5DB7;
     text-decoration: line-through;
@@ -176,17 +176,17 @@ body {
 .shop-info {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px;
+    gap: 10px;
+    padding: 12px;
     background-color: white;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    border-radius: 14px;
+    margin-bottom: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .shop-avatar {
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
     background: linear-gradient(135deg, #4E5DB7 0%, #6B7FD7 100%);
     border-radius: 50%;
     display: flex;
@@ -196,12 +196,12 @@ body {
 }
 
 .shop-avatar svg {
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
 }
 
 .shop-name {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
     color: #4E5DB7;
 }
@@ -210,16 +210,16 @@ body {
 .delivery-info {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
+    gap: 12px;
+    padding: 12px;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 14px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .delivery-icon {
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
     color: #4E5DB7;
     flex-shrink: 0;
 }
@@ -229,14 +229,14 @@ body {
 }
 
 .delivery-date {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     color: #4E5DB7;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .delivery-location {
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 500;
     color: #4E5DB7;
     opacity: 0.7;
@@ -245,12 +245,12 @@ body {
 /* Desktop Action Buttons */
 .desktop-actions {
     display: none;
-    padding: 40px 60px;
+    padding: 20px 25px 25px;
     background-color: #F8E291;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -378,102 +378,102 @@ body {
 /* Desktop & Large Screens */
 @media (min-width: 1200px) {
     .top-nav {
-        padding: 24px 80px;
+        padding: 20px 50px;
     }
 
     .back-btn svg {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
     }
 
     .menu-btn span {
-        width: 28px;
-        height: 4px;
+        width: 26px;
+        height: 3px;
     }
 
     .page-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .product-image-container {
-        padding: 60px;
-        max-width: 1400px;
+        padding: 25px 150px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
     .product-image {
-        border-radius: 28px;
+        border-radius: 24px;
     }
 
     .discount-badge {
-        top: 40px;
-        right: 40px;
-        font-size: 22px;
-        padding: 12px 24px;
-        border-radius: 40px;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 35px;
     }
 
     .product-info {
-        padding: 50px 80px;
-        max-width: 1400px;
+        padding: 25px 50px;
+        max-width: 1000px;
     }
 
     .product-name {
-        font-size: 38px;
-        margin-bottom: 25px;
+        font-size: 26px;
+        margin-bottom: 15px;
     }
 
     .price-section {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 
     .current-price {
-        font-size: 48px;
+        font-size: 32px;
     }
 
     .original-price {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .shop-info {
-        padding: 25px;
-        border-radius: 24px;
-        margin-bottom: 25px;
-        gap: 20px;
+        padding: 15px;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        gap: 12px;
     }
 
     .shop-avatar {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .shop-avatar svg {
-        width: 42px;
-        height: 42px;
+        width: 30px;
+        height: 30px;
     }
 
     .shop-name {
-        font-size: 26px;
+        font-size: 18px;
     }
 
     .delivery-info {
-        padding: 25px;
-        border-radius: 24px;
-        gap: 24px;
+        padding: 15px;
+        border-radius: 16px;
+        gap: 15px;
     }
 
     .delivery-icon {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .delivery-date {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 17px;
+        margin-bottom: 6px;
     }
 
     .delivery-location {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     /* Hide bottom bar on desktop */
@@ -484,25 +484,25 @@ body {
     /* Show desktop actions on desktop */
     .desktop-actions {
         display: flex;
-        padding: 50px 80px;
-        max-width: 1400px;
+        padding: 25px 50px 30px;
+        max-width: 1000px;
     }
 
     .desktop-chat-btn,
     .desktop-cart-btn {
-        font-size: 20px;
-        padding: 20px 35px;
+        font-size: 16px;
+        padding: 14px 24px;
     }
 
     .desktop-chat-btn svg,
     .desktop-cart-btn svg {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
     }
 
     .desktop-checkout-btn {
-        font-size: 24px;
-        padding: 20px 35px;
+        font-size: 18px;
+        padding: 14px 24px;
     }
 }
 
