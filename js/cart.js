@@ -64,40 +64,86 @@ function initializeEventListeners() {
         window.location.href = '../home.html';
     });
 
-    // Checkout button functionality
+    // Mobile Checkout button functionality
     const checkoutBtn = document.getElementById('checkoutBtn');
-    checkoutBtn.addEventListener('click', function() {
-        const selectedItems = document.querySelectorAll('.item-checkbox:checked');
-        if (selectedItems.length > 0) {
-            window.location.href = 'checkout.html';
-        } else {
-            alert('กรุณาเลือกสินค้าที่ต้องการสั่งซื้อ');
-        }
-    });
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+            const selectedItems = document.querySelectorAll('.item-checkbox:checked');
+            if (selectedItems.length > 0) {
+                window.location.href = 'checkout.html';
+            } else {
+                alert('กรุณาเลือกสินค้าที่ต้องการสั่งซื้อ');
+            }
+        });
+    }
 
-    // Select all functionality
+    // Desktop Checkout button functionality
+    const desktopCheckoutBtn = document.getElementById('desktopCheckoutBtn');
+    if (desktopCheckoutBtn) {
+        desktopCheckoutBtn.addEventListener('click', function() {
+            const selectedItems = document.querySelectorAll('.item-checkbox:checked');
+            if (selectedItems.length > 0) {
+                window.location.href = 'checkout.html';
+            } else {
+                alert('กรุณาเลือกสินค้าที่ต้องการสั่งซื้อ');
+            }
+        });
+    }
+
+    // Mobile Select all functionality
     const selectAllCheckbox = document.getElementById('selectAll');
     const itemCheckboxes = document.querySelectorAll('.item-checkbox');
 
-    selectAllCheckbox.addEventListener('change', function() {
-        itemCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
-            // Update data
-            const cartId = parseInt(checkbox.closest('.cart-item').dataset.cartId);
-            const cartItem = cartData.find(item => item.id === cartId);
-            if (cartItem) {
-                cartItem.selected = selectAllCheckbox.checked;
-            }
+    if (selectAllCheckbox) {
+        selectAllCheckbox.addEventListener('change', function() {
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+                // Update data
+                const cartId = parseInt(checkbox.closest('.cart-item').dataset.cartId);
+                const cartItem = cartData.find(item => item.id === cartId);
+                if (cartItem) {
+                    cartItem.selected = selectAllCheckbox.checked;
+                }
+            });
+            updateTotal();
+            updateCheckoutButton();
         });
-        updateTotal();
-        updateCheckoutButton();
-    });
+    }
+
+    // Desktop Select all functionality
+    const desktopSelectAllCheckbox = document.getElementById('desktopSelectAll');
+    if (desktopSelectAllCheckbox) {
+        desktopSelectAllCheckbox.addEventListener('change', function() {
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = desktopSelectAllCheckbox.checked;
+                // Update data
+                const cartId = parseInt(checkbox.closest('.cart-item').dataset.cartId);
+                const cartItem = cartData.find(item => item.id === cartId);
+                if (cartItem) {
+                    cartItem.selected = desktopSelectAllCheckbox.checked;
+                }
+            });
+            // Sync mobile select all
+            if (selectAllCheckbox) {
+                selectAllCheckbox.checked = desktopSelectAllCheckbox.checked;
+            }
+            updateTotal();
+            updateCheckoutButton();
+        });
+    }
 
     // Update select all when individual checkboxes change
     itemCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             const allChecked = Array.from(itemCheckboxes).every(cb => cb.checked);
-            selectAllCheckbox.checked = allChecked;
+
+            // Sync both select all checkboxes
+            if (selectAllCheckbox) {
+                selectAllCheckbox.checked = allChecked;
+            }
+            if (desktopSelectAllCheckbox) {
+                desktopSelectAllCheckbox.checked = allChecked;
+            }
 
             // Update data
             const cartId = parseInt(this.closest('.cart-item').dataset.cartId);
@@ -196,14 +242,35 @@ function updateCartCount() {
 // Update total amount
 function updateTotal() {
     const total = dataHelpers.calculateCartTotal(true);
-    document.querySelector('.total-amount').textContent = '฿' + total;
+
+    // Update mobile total
+    const totalAmount = document.querySelector('.total-amount');
+    if (totalAmount) {
+        totalAmount.textContent = '฿' + total;
+    }
+
+    // Update desktop total
+    const desktopTotalAmount = document.querySelector('.desktop-total-amount');
+    if (desktopTotalAmount) {
+        desktopTotalAmount.textContent = '฿' + total;
+    }
 }
 
 // Update checkout button text
 function updateCheckoutButton() {
     const selectedCount = dataHelpers.getSelectedCartCount();
+
+    // Update mobile button
     const checkoutBtn = document.getElementById('checkoutBtn');
-    checkoutBtn.textContent = `สั่งซื้อ (${selectedCount})`;
+    if (checkoutBtn) {
+        checkoutBtn.textContent = `สั่งซื้อ (${selectedCount})`;
+    }
+
+    // Update desktop button
+    const desktopCheckoutBtn = document.getElementById('desktopCheckoutBtn');
+    if (desktopCheckoutBtn) {
+        desktopCheckoutBtn.textContent = `สั่งซื้อ (${selectedCount})`;
+    }
 }
 
 // Check if cart is empty
@@ -211,16 +278,27 @@ function checkEmptyCart() {
     const cartItemsContainer = document.querySelector('.cart-items');
     const emptyState = document.querySelector('.empty-state');
     const bottomBar = document.querySelector('.bottom-bar');
+    const desktopCheckoutSection = document.querySelector('.desktop-checkout-section');
     const remainingItems = cartData.length;
 
     if (remainingItems === 0) {
         cartItemsContainer.style.display = 'none';
         emptyState.style.display = 'flex';
-        bottomBar.style.display = 'none';
+        if (bottomBar) {
+            bottomBar.style.display = 'none';
+        }
+        if (desktopCheckoutSection) {
+            desktopCheckoutSection.style.display = 'none';
+        }
     } else {
         cartItemsContainer.style.display = 'flex';
         emptyState.style.display = 'none';
-        bottomBar.style.display = 'flex';
+        if (bottomBar) {
+            bottomBar.style.display = 'flex';
+        }
+        if (desktopCheckoutSection && window.innerWidth >= 1200) {
+            desktopCheckoutSection.style.display = 'flex';
+        }
     }
 }
 

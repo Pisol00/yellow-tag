@@ -178,9 +178,16 @@ function initializeEventListeners() {
         });
     });
 
-    // Confirm button functionality
+    // Mobile Confirm button functionality
     const confirmBtn = document.getElementById('confirmBtn');
     confirmBtn.addEventListener('click', function() {
+        // Redirect to success page after confirmation
+        window.location.href = 'success.html';
+    });
+
+    // Desktop Confirm button functionality
+    const desktopConfirmBtn = document.getElementById('desktopConfirmBtn');
+    desktopConfirmBtn.addEventListener('click', function() {
         // Redirect to success page after confirmation
         window.location.href = 'success.html';
     });

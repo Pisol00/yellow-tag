@@ -19,7 +19,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 428px;
+    max-width: 100%;
     min-height: 100vh;
     background-color: #F8E291;
     display: flex;
@@ -30,7 +30,7 @@ body {
 /* Top Navigation */
 .top-nav {
     background-color: #4E5DB7;
-    padding: 12px 20px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,8 +59,8 @@ body {
 }
 
 .back-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
 .menu-btn {
@@ -78,7 +78,7 @@ body {
 }
 
 .page-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     color: #F8E291;
 }
@@ -95,7 +95,7 @@ body {
     position: relative;
     width: 100%;
     background: white;
-    padding: 20px;
+    padding: 40px;
 }
 
 .product-image {
@@ -132,16 +132,19 @@ body {
 
 /* Product Info */
 .product-info {
-    padding: 20px;
+    padding: 40px 60px;
     background-color: #F8E291;
     flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .product-name {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     color: #4E5DB7;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Price Section */
@@ -156,13 +159,13 @@ body {
 }
 
 .current-price {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
     color: #4E5DB7;
 }
 
 .original-price {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 500;
     color: #4E5DB7;
     text-decoration: line-through;
@@ -173,17 +176,17 @@ body {
 .shop-info {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 15px;
+    gap: 16px;
+    padding: 20px;
     background-color: white;
-    border-radius: 15px;
-    margin-bottom: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .shop-avatar {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(135deg, #4E5DB7 0%, #6B7FD7 100%);
     border-radius: 50%;
     display: flex;
@@ -193,12 +196,12 @@ body {
 }
 
 .shop-avatar svg {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
 }
 
 .shop-name {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     color: #4E5DB7;
 }
@@ -207,16 +210,16 @@ body {
 .delivery-info {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    padding: 15px;
+    gap: 20px;
+    padding: 20px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .delivery-icon {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     color: #4E5DB7;
     flex-shrink: 0;
 }
@@ -226,29 +229,97 @@ body {
 }
 
 .delivery-date {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: #4E5DB7;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .delivery-location {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     color: #4E5DB7;
     opacity: 0.7;
 }
 
+/* Desktop Action Buttons */
+.desktop-actions {
+    display: none;
+    padding: 40px 60px;
+    background-color: #F8E291;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.desktop-chat-btn,
+.desktop-cart-btn {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    color: #4E5DB7;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 30px;
+    border: 2px solid #4E5DB7;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.desktop-chat-btn svg,
+.desktop-cart-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+.desktop-chat-btn:hover,
+.desktop-cart-btn:hover {
+    background-color: #4E5DB7;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 93, 183, 0.3);
+}
+
+.desktop-checkout-btn {
+    flex: 2;
+    min-width: 300px;
+    background: linear-gradient(135deg, #F4D483 0%, #E8B849 100%);
+    color: #4E5DB7;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 184, 73, 0.3);
+}
+
+.desktop-checkout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 184, 73, 0.4);
+}
+
 /* Bottom Action Bar */
 .bottom-bar {
     background-color: #4E5DB7;
-    padding: 15px 20px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.15);
     position: sticky;
     bottom: 0;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .chat-btn,
@@ -273,13 +344,13 @@ body {
 
 .chat-btn svg,
 .cart-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
 }
 
 .chat-btn span,
 .cart-btn span {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -287,9 +358,9 @@ body {
     flex: 1;
     background: linear-gradient(135deg, #F4D483 0%, #E8B849 100%);
     color: #4E5DB7;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    padding: 14px;
+    padding: 16px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -303,9 +374,343 @@ body {
 }
 
 /* Responsive Design */
+
+/* Desktop & Large Screens */
+@media (min-width: 1200px) {
+    .top-nav {
+        padding: 24px 80px;
+    }
+
+    .back-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .menu-btn span {
+        width: 28px;
+        height: 4px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .product-image-container {
+        padding: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .product-image {
+        border-radius: 28px;
+    }
+
+    .discount-badge {
+        top: 40px;
+        right: 40px;
+        font-size: 22px;
+        padding: 12px 24px;
+        border-radius: 40px;
+    }
+
+    .product-info {
+        padding: 50px 80px;
+        max-width: 1400px;
+    }
+
+    .product-name {
+        font-size: 38px;
+        margin-bottom: 25px;
+    }
+
+    .price-section {
+        margin-bottom: 30px;
+    }
+
+    .current-price {
+        font-size: 48px;
+    }
+
+    .original-price {
+        font-size: 30px;
+    }
+
+    .shop-info {
+        padding: 25px;
+        border-radius: 24px;
+        margin-bottom: 25px;
+        gap: 20px;
+    }
+
+    .shop-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .shop-avatar svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .shop-name {
+        font-size: 26px;
+    }
+
+    .delivery-info {
+        padding: 25px;
+        border-radius: 24px;
+        gap: 24px;
+    }
+
+    .delivery-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .delivery-date {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .delivery-location {
+        font-size: 20px;
+    }
+
+    /* Hide bottom bar on desktop */
+    .bottom-bar {
+        display: none;
+    }
+
+    /* Show desktop actions on desktop */
+    .desktop-actions {
+        display: flex;
+        padding: 50px 80px;
+        max-width: 1400px;
+    }
+
+    .desktop-chat-btn,
+    .desktop-cart-btn {
+        font-size: 20px;
+        padding: 20px 35px;
+    }
+
+    .desktop-chat-btn svg,
+    .desktop-cart-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .desktop-checkout-btn {
+        font-size: 24px;
+        padding: 20px 35px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .top-nav {
+        padding: 18px 50px;
+    }
+
+    .product-info {
+        max-width: 1000px;
+    }
+
+    .bottom-bar {
+        max-width: 1000px;
+    }
+}
+
+/* Mobile Landscape & Small Tablet */
+@media (max-width: 767px) and (min-width: 481px) {
+    .top-nav {
+        padding: 16px 30px;
+    }
+
+    .product-image-container {
+        padding: 30px;
+    }
+
+    .product-info {
+        padding: 35px 40px;
+    }
+
+    .product-name {
+        font-size: 28px;
+    }
+
+    .current-price {
+        font-size: 36px;
+    }
+
+    .original-price {
+        font-size: 22px;
+    }
+
+    .shop-info,
+    .delivery-info {
+        padding: 18px;
+    }
+
+    .shop-avatar {
+        width: 54px;
+        height: 54px;
+    }
+
+    .shop-avatar svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .shop-name {
+        font-size: 20px;
+    }
+
+    .delivery-icon {
+        width: 54px;
+        height: 54px;
+    }
+
+    .delivery-date {
+        font-size: 18px;
+    }
+
+    .delivery-location {
+        font-size: 16px;
+    }
+
+    .bottom-bar {
+        padding: 18px 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 12px 20px;
+    }
+
+    .back-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .menu-btn span {
+        width: 24px;
+        height: 3px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .product-image-container {
+        padding: 20px;
+    }
+
+    .product-image {
+        border-radius: 20px;
+    }
+
+    .discount-badge {
+        top: 30px;
+        right: 30px;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 30px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .price-section {
+        margin-bottom: 20px;
+    }
+
+    .current-price {
+        font-size: 32px;
+    }
+
+    .original-price {
+        font-size: 20px;
+    }
+
+    .shop-info {
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+
+    .shop-avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .shop-avatar svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .shop-name {
+        font-size: 18px;
+    }
+
+    .delivery-info {
+        padding: 15px;
+        border-radius: 15px;
+        gap: 15px;
+    }
+
+    .delivery-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .delivery-date {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .delivery-location {
+        font-size: 14px;
+    }
+
+    .bottom-bar {
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .chat-btn svg,
+    .cart-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .chat-btn span,
+    .cart-btn span {
+        font-size: 12px;
+    }
+
+    .checkout-btn {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+
 @media (max-width: 428px) {
     .top-nav {
         padding: 10px 16px;
+    }
+
+    .product-info {
+        padding: 16px;
     }
 
     .product-name {
@@ -331,18 +736,8 @@ body {
     }
 
     .discount-badge {
-        font-size: 20px;
-        padding: 10px 16px;
-    }
-}
-
-@media (min-width: 429px) {
-    body {
-        background-color: #e5e5e5;
-    }
-
-    .container {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        padding: 6px 12px;
     }
 }
 

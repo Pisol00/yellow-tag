@@ -71,20 +71,37 @@ function initializeEventListeners() {
         window.location.href = '../home.html';
     });
 
-    // Chat button functionality
+    // Mobile Chat button functionality
     const chatBtn = document.getElementById('chatBtn');
     chatBtn.addEventListener('click', function() {
     });
 
-    // Cart button functionality
+    // Mobile Cart button functionality
     const cartBtn = document.getElementById('cartBtn');
     cartBtn.addEventListener('click', function() {
         window.location.href = 'cart.html';
     });
 
-    // Checkout button functionality
+    // Mobile Checkout button functionality
     const checkoutBtn = document.getElementById('checkoutBtn');
     checkoutBtn.addEventListener('click', function() {
+        window.location.href = 'checkout.html';
+    });
+
+    // Desktop Chat button functionality
+    const desktopChatBtn = document.getElementById('desktopChatBtn');
+    desktopChatBtn.addEventListener('click', function() {
+    });
+
+    // Desktop Cart button functionality
+    const desktopCartBtn = document.getElementById('desktopCartBtn');
+    desktopCartBtn.addEventListener('click', function() {
+        window.location.href = 'cart.html';
+    });
+
+    // Desktop Checkout button functionality
+    const desktopCheckoutBtn = document.getElementById('desktopCheckoutBtn');
+    desktopCheckoutBtn.addEventListener('click', function() {
         window.location.href = 'checkout.html';
     });
 
